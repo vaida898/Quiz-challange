@@ -1,35 +1,112 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Contents:
+    * UX 
+    * Project Goals
+    * Target Audience Goals
+    * Site Owner Goals
+    * User Requirements and Expectations
+    * Design Choices 
+        * Fonts
+        * Icons
+        * Colours
+        * Styling
+        * Images + Background
+    * Wireframes 
+    * Features 
+        * Features that have been developed
+    * Technologies Used 
+    * Testing planning + Testing stories 
+    * Deployment 
+    * Credits 
 
-Welcome USER_NAME,
+# UX (User experience)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Project Goals
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User Goals:
 
-`python3 -m http.server`
+### User Stories:
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
+### Site Owner Goals:
 
-Another blue button should appear to click: *Open Browser*.
+# User Requirements and Expectations:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+### Requirements:
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+### Expectations:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+# Design Choices:
 
---------
 
-Happy coding!
+### Fonts:
+
+### Icons:
+
+
+### Colours:
+
+
+### Styling:
+
+
+### Images + Background:
+
+
+# Wireframes:
+
+# Features:
+
+
+# Technologies Used:
+
+## Languages:
+
+
+
+
+## Tools and Libraries:
+
+
+### Testing planning + Testing stories:
+
+
+# Deployment:
+
+Linkin Park fan page was developed on GitPod, using git and GitHub to host the repository.
+
+When deploying Linkin Park fan page using GitHub Pages the following steps were made:
+
+* Opened up <strong>GitHub</strong> in the browser.
+* Signed in using my username and password.
+* Navigated to my <strong>repositories</strong>.
+* Found repository called <strong>'/vaida898/LinkinPark-fan-page'</strong>.
+* In the right side above respository I clicked <strong>'settings'</strong>.
+* Scrolled down to the <strong>GitHub Pages</strong> area. 
+* Selected <strong>'Master Branch'</strong> from the <strong>'Source'</strong> dropdown menu.
+* Clicked to confirm my selection.
+* Linkin Park fan page became live on GitHub Pages.
+
+#### Running Linkin Park fan page Locally
+
+Cloning Linkin Park fan page from GitHub:
+
+* Navigate to <strong>'/vaida898/LinkinPark-fan-page'</strong>.
+* Click the green <strong>'Clone or Download'</strong> button.
+* Copy the <strong>url</strong> in the dropdown box.
+* Using your favourite <strong>IDE</strong> open up your preferred <strong>terminal</strong>.
+* Navigate to your desired file location. 
+* Copy the following <strong>code</strong> and input it into your terminal to clone Linkin Park fan page.
+ ```git
+  git clone https://github.com/vaida898/LinkinPark-fan-page.git
+   ```
+
+# Closing Notes:
+
+
+# Credits:
+
