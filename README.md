@@ -26,12 +26,9 @@ user have fun and enjoy the play.
 
 
 ### User Goals:
-* Game is working as predicted 
-* You are able to choose categories 
-* You are able to choose difficulty level 
-* You are able to choose how many questions you will be asked
-* Buttons and selector boxes either correspods as expexted or gives predicted choices
-* Able to see your score and see correct and incorrect answers after finishing 
+* Game is working as expected
+* Game is easy to use
+* Gameplay is not too complicated and self-explanatory 
 * Interact with the website on Desktop, Tablet and Mobile
 
 ### User Stories:
@@ -48,7 +45,11 @@ user have fun and enjoy the play.
 # User Requirements and Expectations:
 
 ### Requirements:
-
+* You are able to choose categories 
+* You are able to choose difficulty level 
+* You are able to choose how many questions you will be asked
+* Buttons and selector boxes either correspods as expexted or gives predicted choices
+* Able to see your score and see correct and incorrect answers after finishing 
 
 ### Expectations:
 
