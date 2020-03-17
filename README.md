@@ -21,6 +21,8 @@
 # UX (User experience)
 
 ## Project Goals
+This project is a fun quiz game for anyone who likes to challange themselves. The main goal for this game is to make
+user have fun and enjoy this game. 
 
 
 ### User Goals:
