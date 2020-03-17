@@ -22,7 +22,7 @@
 
 ## Project Goals
 This project is a fun quiz game for anyone who likes to challange themselves. The main goal for this game is to make
-user have fun and enjoy this game. 
+user have fun and enjoy the play. 
 
 
 ### User Goals:
@@ -30,7 +30,7 @@ user have fun and enjoy this game.
 * You are able to choose categories 
 * You are able to choose difficulty level 
 * You are able to choose how many questions you will be asked
-* Selector boxes and button respond as expected
+* Buttons and selector boxes either correspods as expexted or gives predicted choices
 * Able to see your score and see correct and incorrect answers after finishing 
 * Interact with the website on Desktop, Tablet and Mobile
 
@@ -40,6 +40,10 @@ user have fun and enjoy this game.
 
 
 ### Site Owner Goals:
+* Make sure that game is functional and reacts as expected
+* Selector boxes and button respond as expected
+* Colour scheme and background is not too much into a face and doesn't tire user
+* User enjoys game and plays it not even once
 
 # User Requirements and Expectations:
 
