@@ -45,14 +45,17 @@ user have fun and enjoy the play.
 # User Requirements and Expectations:
 
 ### Requirements:
+* Gameplay is easy to understand and doesn't need to be explained
+* Text is easily readible and understandable
+* Background and provided images does not disturb and complicate Gameplay
+* Game is not offensive and does not exclude any player 
+
+### Expectations:
 * You are able to choose categories 
 * You are able to choose difficulty level 
 * You are able to choose how many questions you will be asked
 * Buttons and selector boxes either correspods as expexted or gives predicted choices
-* Able to see your score and see correct and incorrect answers after finishing 
-
-### Expectations:
-
+* Able to see your score and see correct and incorrect answers after finishing
 
 # Design Choices:
 
