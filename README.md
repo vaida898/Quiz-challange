@@ -26,6 +26,13 @@ user have fun and enjoy this game.
 
 
 ### User Goals:
+* Game is working as predicted 
+* You are able to choose categories 
+* You are able to choose difficulty level 
+* You are able to choose how many questions you will be asked
+* Selector boxes and button respond as expected
+* Able to see your score and see correct and incorrect answers after finishing 
+* Interact with the website on Desktop, Tablet and Mobile
 
 ### User Stories:
 
