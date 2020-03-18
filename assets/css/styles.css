@@ -1,3 +1,8 @@
 #main {
-    
+    background-image: url(../img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
