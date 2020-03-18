@@ -1,3 +1,12 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+
 #main {
     background-image: url(../img/bg.jpeg);
     background-size: cover;
@@ -5,4 +14,10 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    height: 100vh;
+}
+
+.play-btn {
+    position: center;
+    margin-top: 35rem;  
 }
