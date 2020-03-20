@@ -8,6 +8,7 @@ body {
     font-size: 62.5%;
 }
 
+/* Main game page */
 #main {
     background-image: url(../img/bg.jpeg);
     background-size: cover;
@@ -35,6 +36,17 @@ body {
     font-size: 2.5rem;
     padding: 1rem 2rem;
     font-family: "Slackey", sans-serif;
+}
+
+/* Select your option section */
+#selection {
+    background-image: url(../img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
 }
 
 #category-dropdown {
