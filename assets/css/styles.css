@@ -17,7 +17,11 @@ body {
     height: 100vh;
 }
 
+.game-title {
+    margin-top: 20rem;
+}
+
 .play-btn {
     position: center;
-    margin-top: 35rem;  
+    margin-top: 10rem;  
 }
