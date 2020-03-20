@@ -30,4 +30,9 @@ body {
 .play-btn {
     position: center;
     margin-top: 5rem;  
+    background-color: #F222D9;
+    border-radius: 45%; 
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    font-family: "Slackey", sans-serif;
 }
