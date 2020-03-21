@@ -49,6 +49,13 @@ body {
     height: 100vh;
 }
 
+.select-title {
+    margin-top: 15rem;
+    font-family: "Lemon", sans-serif;
+    font-weight: 500;
+    font-size: 4rem;
+}
+
 #category-dropdown {
 
 }
