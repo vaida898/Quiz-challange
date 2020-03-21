@@ -27,22 +27,19 @@
             <div class="row">
                 <div class="col">
                     <h2 class="select-title text-center">Please choose your options:</h2>
-                    <select id="category-dropdown" name="category">
+                    <select id="categoryDropdown" name="category">
                         <option value="">--Choose a category:--</option>
                     </select>
+                    <div id="output"></div>
 
                     <script>
-                       //document.getElementById('category-dropdown').addEventListener('click', categoryDrop); 
+                       document.getElementById('categoryDropdown').addEventListener('click', categoryDropdown); 
 
-                        function categoryDrop(){
+                        function categoryDropdown(){
                             fetch('https://opentdb.com/api.php?amount=10').then((res) => res.json()).then((data) => {
                                let output = '<h8>Categories</h8>';
                                data.forEach(function(categoryID){
-                                   output += `
-                                   <ul>
-                                    <li>ID: ${categoryID.category}</li>
-                                   </ul>
-                                   `;
+                                   output += `<div><p>${categoryID.category}</p></div>`;
                                });
                                document.getElementById('output').innerHTML = output;
                             })
