@@ -30,6 +30,17 @@
                     <select id="category-dropdown" name="category">
                         <option value="">--Choose a category:--</option>
                     </select>
+
+                    <script>
+                        document.getElementById('category-dropdown').addEventListener('click', categoryDrop);
+
+                        function categoryDrop(){
+                            fetch('https://opentdb.com/api.php?amount=10').then(function(res){
+                                console.log(res);
+                            })
+                        }
+                    </script>
+
                     <select id="difficulty-dropdown" name="difficulty">
                         <option value="">--Choose a difficulty level:--</option>
                     </select>
