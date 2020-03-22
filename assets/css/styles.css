@@ -57,7 +57,7 @@ body {
     color: #3FCCF5;
 }
 
-#categoryDropdown,
+#category-select,
 #difficulty-dropdown,
 #questions-dropdown {
     font-family: "Slackey", sans-serif;
