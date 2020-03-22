@@ -58,8 +58,8 @@ body {
 }
 
 #category-select,
-#difficulty-dropdown,
-#questions-dropdown {
+#difficulty-select,
+#questions-select {
     font-family: "Slackey", sans-serif;
     font-weight: 400;
     font-size: 1rem;
