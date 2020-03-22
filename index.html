@@ -30,6 +30,23 @@
                     <select id="category-select" name="category">
                         <option value="">--Choose a category:--</option>
                     </select>
+                    <div id="output"></div>
+
+                    <!--<script>
+                       document.getElementById('categoryDropdown').addEventListener('click', categoryDropdown); 
+
+                        function categoryDropdown(){
+                            fetch('https://opentdb.com/api.php?amount=10').then((res) => res.json()).then((data) => {
+                               let output = '<h8>Categories</h8>';
+                               data.forEach(function(categoryID){
+                                   output += `<div><p>${categoryID.category}</p></div>`;
+                               });
+                               document.getElementById('output').innerHTML = output;
+                            })
+                            .catch((err) => console.log(err))
+                        }
+                    </script>-->
+
                     <select id="difficulty-dropdown" name="difficulty">
                         <option value="">--Choose a difficulty level:--</option>
                     </select>
