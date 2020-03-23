@@ -63,6 +63,12 @@ quiz game for a user. Games normally cheer people up and in this case colour sch
 everything up.
 
 ### Fonts:
+Website itself does not have a lot of design features so I decided to make a writting stand out and choise 
+<a href="https://fonts.google.com/?query=Slackey&selection.family=Lato">Slackey</a> font for headings.
+
+Another font I picked was to make selector boxes more playful and attractive was 
+<a href="https://fonts.google.com/?query=Lemon&selection.family=Lato">Slackey</a> which is not too much 
+in your eyes but also calls you for fun time.
 
 ### Icons:
 
