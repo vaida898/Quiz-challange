@@ -67,14 +67,17 @@ Website itself does not have a lot of design features so I decided to make a wri
 <a href="https://fonts.google.com/?query=Slackey&selection.family=Lato">Slackey</a> font for headings.
 
 Another font I picked was to make selector boxes more playful and attractive was 
-<a href="https://fonts.google.com/?query=Lemon&selection.family=Lato">Slackey</a> which is not too much 
+<a href="https://fonts.google.com/?query=Lemon&selection.family=Lato">Lemon</a> which is not too much 
 in your eyes but also calls you for fun time.
 
 ### Icons:
 
 
 ### Colours:
-
+* #ffffff (White)
+* #000000 (Black)
+* #3FCCF5
+* #F222D9
 
 ### Styling:
 
