@@ -58,7 +58,9 @@ user have fun and enjoy the play.
 * Able to see your score and see correct and incorrect answers after finishing
 
 # Design Choices:
-
+This website should be interactive and more fun so the best way to combine everythings was to create fun 
+quiz game for a user. Games normally cheer people up and in this case colour scheme was picked to brighten
+everything up.
 
 ### Fonts:
 
@@ -82,8 +84,6 @@ user have fun and enjoy the play.
 # Technologies Used:
 
 ## Languages:
-
-
 
 
 ## Tools and Libraries:
