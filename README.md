@@ -127,10 +127,7 @@ The deployment version of this project had been stored in <a href="https://githu
    The deployed site code is exactly the same as it is on the master branch on GitHub.
 
    The live version of the site can be found by clicking link below:   
-    ```git
-  git clone https://github.com/vaida898/Quiz-challange.git
-   ```
-
+    **https://github.com/vaida898/Quiz-challange.git** 
 
 # Closing Notes:
 
