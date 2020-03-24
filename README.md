@@ -105,6 +105,10 @@ on Balsamiq to show how structurally elements would appear on the page for diffe
 
 ## Tools and Libraries:
 
+* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://fontawesome.com/icons?d=gallery">Font-Awesome</a>
+* <a href="https://ianlunn.github.io/Hover/">Hover.css</a>
+* <a href="https://opentdb.com/">Opentdb</a>
 
 ### Testing planning + Testing stories:
 
