@@ -87,6 +87,10 @@ Background image had been found on <a href="https://hdblackwallpaper.com">Hdblac
 and more abstract with bright colours background image because I wanted to focus on gameplay and functionality.
 
 # Wireframes:
+I have built wireframes for this project using <a href="https://balsamiq.com/">Balsamiq</a> mockups. I created basic wireframes for Mobile/Tablet/Desktop
+on Balsamiq to show how structurally elements would appear on the page for different devices. Wireframes can be found by clicking this link in my repository:
+
+<a href="https://github.com/vaida898/Quiz-challange/tree/master/wireframes">Wireframes for Desktop, Mobile and Tablet</a>
 
 # Features:
 
