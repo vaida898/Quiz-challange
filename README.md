@@ -120,3 +120,6 @@ on Balsamiq to show how structurally elements would appear on the page for diffe
 
 # Credits:
 
+* <a href="https://htmlcolorcodes.com/color-names/">Colour names and codes</a>
+* <a href="https://www.cssmatic.com/box-shadow">Shadow box parameters</a>
+
