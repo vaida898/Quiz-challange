@@ -115,6 +115,22 @@ on Balsamiq to show how structurally elements would appear on the page for diffe
 
 # Deployment:
 
+The deployment version of this project had been stored in <a href="https://github.com/">GitHub</a> site. 
+
+   This site has been published live form master branch using the following procedure:
+
+   1. On the vaida898/Quiz-challange repository page, you have to be sure that the "master" branch is selected.
+   2. Next step is to click on the Settings tab.
+   3. In the GitHub Pages frame, from the Source dropdown menu, choose "master branch".
+   4. Scroll back down to the GitHub Pages frame, where the address of the newly-published site is now displayed.
+
+   The deployed site code is exactly the same as it is on the master branch on GitHub.
+
+   The live version of the site can be found by clicking link below:   
+    ```git
+  git clone https://github.com/vaida898/Quiz-challange.git
+   ```
+
 # Closing Notes:
 
 
