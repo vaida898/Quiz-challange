@@ -83,7 +83,8 @@ in your eyes but also calls you for fun time.
 
 
 ### Images + Background:
-
+Background image had been found on <a href="https://hdblackwallpaper.com">Hdblackwallpaper.com</a>. I wanted to have simple
+and more abstract with bright colours background image because I wanted to focus on gameplay and functionality.
 
 # Wireframes:
 
