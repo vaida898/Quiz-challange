@@ -1,3 +1,33 @@
+function selectCat() {
+    const categorySelect = $('category-select');
+    fetch('https://opentdb.com/api_category.php')
+        .then(res => res.json())
+        .then(data => 
+            console.log(data))
+        
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function myFunction() {
   const categorySelect = $('#category-select');
   fetch('https://opentdb.com/api_category.php')
