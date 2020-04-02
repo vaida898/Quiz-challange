@@ -1,30 +1,22 @@
+document.getElementById('category-select').addEventListener
+('click', selectCat);
+
+
 function selectCat() {
     const categorySelect = $('category-select');
     fetch('https://opentdb.com/api_category.php')
-        .then(res => res.json())
-        .then(data => 
-            console.log(data))
+        .then((res) => res.json())
+        .then((data) => {
+            data.trivia_categories.forEach(category => {
+                categorySelect.append(
+                    `<option value="${category.id}">${category.name}</option>`,
+                );
+            });
+        })
+}
+           
         
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+selectCat();
 
 
 /*
