@@ -1,9 +1,9 @@
-document.getElementById('category-select').addEventListener
-('click', selectCat);
+/*document.getElementById('category-select').addEventListener
+('click', selectCat);*/
 
 
 function selectCat() {
-    const categorySelect = $('category-select');
+    const categorySelect = $('#category-select');
     fetch('https://opentdb.com/api_category.php')
         .then((res) => res.json())
         .then((data) => {
@@ -12,6 +12,7 @@ function selectCat() {
                     `<option value="${category.id}">${category.name}</option>`,
                 );
             });
+            console.log(data);
         })
 }
            
