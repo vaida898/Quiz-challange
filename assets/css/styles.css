@@ -70,3 +70,9 @@ option {
     width: 420px;
 }
 
+.start-btn {
+    background-color: #3FCCF5;
+    position: center;
+    font-display: "Slackey", sans-serif;
+}
+
