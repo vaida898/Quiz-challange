@@ -18,6 +18,26 @@ function selectCat() {
 selectCat();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function getQuestions(categoryID, difficulty){
 	const questionDiv = $("#questions");
 	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
