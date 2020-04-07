@@ -1,5 +1,5 @@
-/*document.getElementById('category-select').addEventListener
-('click', selectCat);*/
+document.getElementById('category-select').addEventListener
+('click', selectCat);
 
 
 function selectCat() {
@@ -12,13 +12,53 @@ function selectCat() {
                 categorySelect.append(
                     `<option value="${category.id}">${category.name}</option>`,
                 );
-              
             });
         })
 }
                    
 selectCat();
 
+
+document.getElementById("category-select").onchange = function() {myFunction()};
+
+function myFunction() {
+  var x = document.getElementById("category-select");
+  x.value = x.value.toUpperCase();
+}
+
+
+
+
+function GetSelectedItem(el)
+{
+    var e = document.getElementById(el);
+    var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
+    alert(strSel);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function getQuestions(categoryID, difficulty){
 	const questionDiv = $("#questions-select");
 	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
@@ -32,12 +72,6 @@ function getQuestions(categoryID, difficulty){
 	}) 
 }
 
-
-
-
-
-
-/*
 function getValues(){
 const select = $(".selectSomething");
 	select.click(function() {
