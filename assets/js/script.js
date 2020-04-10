@@ -1,7 +1,35 @@
+// Step one get the values from dropdowns 
+
+var category = ''
+
+// Page loads shows only the start button 
+
+// Click the start button
+
+// Select a category 
+// when a user selects a category
+// save that to the category variable 
+// example : https://stackoverflow.com/questions/11991007/jquery-get-the-selected-dropdown-value-on-change
+// console.log(category)
+// console.log(typeOf(category))
+// use template literals to add category into url
+
+// Select difficulty 
+
+// Select number of q's 
+
+// We knnow the URL will always look like this: 
+// https://opentdb.com/api.php?amount=20&category=11&difficulty=easy
+
+// Step two make a call to the API with user choices 
+var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
+
+
+
 document.getElementById('category-select').addEventListener
 ('click', selectCat);
 
-
+//Step three render questions to page 
 function selectCat() {
     const categorySelect = $('#category-select');
     fetch('https://opentdb.com/api_category.php')
@@ -18,8 +46,14 @@ function selectCat() {
                    
 selectCat();
 
-
+/*
 document.getElementById("category-select").onchange = function() {myFunction()};
+
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = x;
+}
+
 
 function myFunction() {
   var x = document.getElementById("category-select");
@@ -36,7 +70,7 @@ function GetSelectedItem(el)
     alert(strSel);
 }
 
-
+*/
 
 
 
