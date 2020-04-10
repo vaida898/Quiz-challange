@@ -1,3 +1,7 @@
+const selectionID = $("#selection");
+const main = $("#main");
+main.click(function() { selectionID.show(); main.hide();})
+
 // Step one get the values from dropdowns 
 
 var category = ''
