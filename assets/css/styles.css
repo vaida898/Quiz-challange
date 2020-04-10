@@ -83,7 +83,19 @@ option {
 
 /* Question section */
 
+#question {
+    background-image: url(../img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+}
+
+
 #questionTitle {
-    font-display: center;
     font-family: "Lemon", sans-serif;
+    font-size: 2rem;
+    padding-top: 5rem;
 }
