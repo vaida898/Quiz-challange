@@ -81,3 +81,9 @@ option {
     margin-top: 3rem;
 }
 
+/* Question section */
+
+#questionTitle {
+    font-display: center;
+    font-family: "Lemon", sans-serif;
+}
