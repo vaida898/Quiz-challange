@@ -93,9 +93,13 @@ option {
     height: 100vh;
 }
 
-
 #questionTitle {
     font-family: "Lemon", sans-serif;
     font-size: 2rem;
     padding-top: 5rem;
+    color: #3FCCF5;
+}
+
+.qst-option {
+
 }
