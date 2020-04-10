@@ -101,8 +101,10 @@ option {
 }
 
 .qst-btn {
-    background-color: #ffffff;
+    background-color: #B8F5FA;
     padding: 1rem;
-    margin-top: 2rem;
-    position: center;
+    margin-top: 5rem;
+    margin-right: 2.5rem;
+    margin-left: 1.5rem;
+    width: 500px;
 }
