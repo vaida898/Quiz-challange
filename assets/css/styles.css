@@ -208,6 +208,7 @@ option {
 }
 
 .answersTitle {
+    padding-left: 1rem;
     display: inline;
     font-family: "Slackey", sans-serif;
     color: #F222D9;
