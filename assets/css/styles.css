@@ -137,3 +137,15 @@ option {
     font-size: 2rem;
     padding: 1.2rem;
 }
+
+/* Score section */
+
+#score {
+    background-image: url(../img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+}
