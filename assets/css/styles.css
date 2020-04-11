@@ -105,6 +105,9 @@ option {
     padding: 1rem;
     margin-top: 5rem;
     margin-right: 2.5rem;
-    margin-left: 1.5rem;
+    margin-left: 2.5rem;
     width: 500px;
+    color: #000000;
+    font-weight: 500;
+    font-style: italic;
 }
