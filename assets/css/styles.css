@@ -110,4 +110,5 @@ option {
     color: #000000;
     font-weight: 500;
     font-style: italic;
+    box-shadow: 5px 10px 10px #F222D9;
 }
