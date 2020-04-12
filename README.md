@@ -101,6 +101,7 @@ on Balsamiq to show how structurally elements would appear on the page for diffe
 * <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
 * <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
 * <a href="https://www.w3schools.com/js/">JavaScript</a>
+* <a href="https://www.json.org/json-en.html">JSON</a>
 
 ## Tools and Libraries:
 
@@ -108,6 +109,7 @@ on Balsamiq to show how structurally elements would appear on the page for diffe
 * <a href="https://fontawesome.com/icons?d=gallery">Font-Awesome</a>
 * <a href="https://ianlunn.github.io/Hover/">Hover.css</a>
 * <a href="https://opentdb.com/">Opentdb</a>
+* <a href="https://jquery.com/">jQuery</a>
 
 ### Testing planning + Testing stories:
 
