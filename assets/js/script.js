@@ -57,7 +57,7 @@ function selectCat() {
     fetch('https://opentdb.com/api_category.php')
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             data.trivia_categories.forEach(category => {
                 categorySelect.append(
                     `<option value="${category.id}">${category.name}</option>`,
