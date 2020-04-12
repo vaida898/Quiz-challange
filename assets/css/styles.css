@@ -225,7 +225,25 @@ option {
     color: #FF837D;
 }
 
-.answers {
+.answersTitle,
+.answersYes,
+.answersNo {
     padding-left: 1rem;
     padding-top: 2.5rem;
+}
+
+.answersTitle {
+    color: #F222D9;
+    font-family: "Slackey", sans-serif;
+    text-decoration: underline;
+}
+
+.answersYes {
+    color: #B7FFE0;
+    font-family: "Lemon", sans-serif;
+}
+
+.answersNo {
+    color: #FF837D;
+    font-family: "Lemon", sans-serif;
 }
