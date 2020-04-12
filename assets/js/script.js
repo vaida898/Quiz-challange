@@ -10,6 +10,10 @@ $("#submit-btn").click(function () {
     $("#score").show(); $("#question").hide(); 
 });
 
+window.onload = function() {
+    document.body.className += "loaded";
+}
+
 /*const selectionID = $("#start-btn");
 const main = $("#play-btn");
 main.click(function() { selectionID.show(); main.hide();})
