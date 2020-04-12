@@ -70,16 +70,13 @@ Another font I picked was to make selector boxes more playful and attractive was
 <a href="https://fonts.google.com/?query=Lemon&selection.family=Lato">Lemon</a> which is not too much 
 in your eyes but also calls you for fun time.
 
-### Icons:
-
-
 ### Colours:
 * #000000 (Black)
 * #3FCCF5 (Shocking pink)
 * #F222D9 (Maya blue)
-* #B7FFE0
-* #FF837D
-* #B8F5FA
+* #B7FFE0 (Light cyan)
+* #FF837D (Vivid tangerine)
+* #B8F5FA (Columbia blue)
 
 ### Styling:
 
