@@ -74,10 +74,12 @@ in your eyes but also calls you for fun time.
 
 
 ### Colours:
-* #ffffff (White)
 * #000000 (Black)
 * #3FCCF5 (Shocking pink)
 * #F222D9 (Maya blue)
+* #B7FFE0
+* #FF837D
+* #B8F5FA
 
 ### Styling:
 
