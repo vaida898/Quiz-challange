@@ -207,14 +207,22 @@ option {
     } 
 }
 
-.answersTitle {
+.correctAnswer,
+.wrongAnswer {
     padding-left: 1rem;
     display: inline;
     font-family: "Slackey", sans-serif;
-    color: #F222D9;
     font-size: 2rem;
     font-weight: 400;
     text-decoration: underline;
+}
+
+.correctAnswer {
+    color: #B7FFE0;
+}
+
+.wrongAnswer {
+    color: #FF837D;
 }
 
 .answers {
