@@ -216,3 +216,8 @@ option {
     font-weight: 400;
     text-decoration: underline;
 }
+
+.answers {
+    padding-left: 1rem;
+    padding-top: 2.5rem;
+}
