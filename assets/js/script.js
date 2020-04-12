@@ -1,13 +1,28 @@
-const selectionID = $("#selection");
-const main = $("#main");
+$("#play-btn").click(function () {
+    $("#selection").show(); $("#main").hide(); 
+});
+
+$("#start-btn").click(function () {
+    $("#question").show(); $("#selection").hide(); 
+});
+
+$("#submit-btn").click(function () {
+    $("#score").show(); $("#question").hide(); 
+});
+
+/*const selectionID = $("#start-btn");
+const main = $("#play-btn");
 main.click(function() { selectionID.show(); main.hide();})
 
-const questionID = $("#question");
+const questionID = $("#submit-btn");
 selectionID.click(function() { questionID.show(); selectionID.hide();})
+
+const scoreID = $("#submit-btn");
+questionID.click(function() { scoreID.show(); questionID.hide();})*/
 
 // Step one get the values from dropdowns 
 
-var category = ''
+// var category = ''
 
 // Page loads shows only the start button 
 
@@ -29,13 +44,13 @@ var category = ''
 // https://opentdb.com/api.php?amount=20&category=11&difficulty=easy
 
 // Step two make a call to the API with user choices 
-var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
+/*var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
 
 
 
 document.getElementById('category-select').addEventListener
 ('click', selectCat);
-
+*/
 //Step three render questions to page 
 function selectCat() {
     const categorySelect = $('#category-select');
@@ -50,7 +65,7 @@ function selectCat() {
             });
         })
 }
-                   
+
 selectCat();
 
 /*
