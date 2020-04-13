@@ -64,6 +64,9 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     height: 100vh;
+}
+
+.aniamtion {
     animation: 0.8s ease-in-out 0s 1 slideAnimation;
 }
 

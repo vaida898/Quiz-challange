@@ -1,28 +1,17 @@
 $("#play-btn").click(function () {
-    $("#selection").show(); $("#main").hide(); 
+    $("#selection").show().addClass("animation"); 
+    $("#main").hide(); 
 });
 
 $("#start-btn").click(function () {
-    $("#question").show(); $("#selection").hide(); 
+    $("#question").show().addClass("animation"); 
+    $("#selection").hide(); 
 });
 
 $("#submit-btn").click(function () {
-    $("#score").show(); $("#question").hide(); 
+    $("#score").show().addClass("animation"); 
+    $("#question").hide(); 
 });
-
-window.onload = function() {
-    document.body.className += "loaded";
-}
-
-/*const selectionID = $("#start-btn");
-const main = $("#play-btn");
-main.click(function() { selectionID.show(); main.hide();})
-
-const questionID = $("#submit-btn");
-selectionID.click(function() { questionID.show(); selectionID.hide();})
-
-const scoreID = $("#submit-btn");
-questionID.click(function() { scoreID.show(); questionID.hide();})*/
 
 // Step one get the values from dropdowns 
 
