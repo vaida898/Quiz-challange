@@ -150,7 +150,7 @@ option {
 }
 
 #submit-btn {
-    background-color: #F222D9;
+    background-color: #F222D9 !important;
     margin-top: 5.5rem;
     font-family: "Lemon", sans-serif;
     font-size: 2rem;
