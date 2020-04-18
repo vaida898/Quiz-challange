@@ -1,4 +1,15 @@
-$("#play-btn").click(function () {
+const playButton = document.getElementById('play-btn')
+
+playButton.addEventListener('click', startGame)
+
+
+function startGane() {
+    console.log('started')
+}
+
+
+
+/*$("#play-btn").click(function () {
     $("#selection").show().addClass("animation"); 
     $("#main").hide(); 
 });
@@ -11,7 +22,7 @@ $("#start-btn").click(function () {
 $("#submit-btn").click(function () {
     $("#score").show().addClass("animation"); 
     $("#question").hide(); 
-});
+});/*
 
 // Step one get the values from dropdowns 
 
