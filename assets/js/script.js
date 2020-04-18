@@ -1,18 +1,36 @@
-const playButton = document.getElementById('play-btn')
-
-playButton.addEventListener('click', startGame)
-
-
-function startGane() {
-    console.log('started')
-}
-
-
-
-/*$("#play-btn").click(function () {
+// Play Game
+$("#play-btn").click(function () {
     $("#selection").show().addClass("animation"); 
     $("#main").hide(); 
 });
+
+// Select Category and save variable
+function selectCat() {
+    const categorySelect = $('#category-select');
+    fetch('https://opentdb.com/api_category.php')
+        .then((res) => res.json())
+        .then((data) => {
+            // console.log(data);
+            data.trivia_categories.forEach(category => {
+                categorySelect.append(
+                    `<option value="${category.id}">${category.name}</option>`,
+                );
+            });
+        })
+}
+
+// Select difficulty level
+
+// Select number of questions
+
+// Start game
+
+// Pick answer from four choices and press button submit
+
+// Score and correct and wrong answers
+
+// Animations between page's loads
+
 
 $("#start-btn").click(function () {
     $("#question").show().addClass("animation"); 
@@ -22,7 +40,7 @@ $("#start-btn").click(function () {
 $("#submit-btn").click(function () {
     $("#score").show().addClass("animation"); 
     $("#question").hide(); 
-});/*
+});
 
 // Step one get the values from dropdowns 
 
@@ -48,14 +66,12 @@ $("#submit-btn").click(function () {
 // https://opentdb.com/api.php?amount=20&category=11&difficulty=easy
 
 // Step two make a call to the API with user choices 
-/*var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
+// var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
 
 
 
-document.getElementById('category-select').addEventListener
-('click', selectCat);
-*/
 //Step three render questions to page 
+
 function selectCat() {
     const categorySelect = $('#category-select');
     fetch('https://opentdb.com/api_category.php')
@@ -72,31 +88,6 @@ function selectCat() {
 
 selectCat();
 
-/*
-document.getElementById("category-select").onchange = function() {myFunction()};
-
-function myFunction() {
-  var x = document.getElementById("mySelect").value;
-  document.getElementById("demo").innerHTML = x;
-}
-
-
-function myFunction() {
-  var x = document.getElementById("category-select");
-  x.value = x.value.toUpperCase();
-}
-
-
-
-
-function GetSelectedItem(el)
-{
-    var e = document.getElementById(el);
-    var strSel = "The Value is: " + e.options[e.selectedIndex].value + " and text is: " + e.options[e.selectedIndex].text;
-    alert(strSel);
-}
-
-*/
 
 
 
