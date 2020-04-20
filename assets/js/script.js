@@ -27,20 +27,11 @@ console.log(categoryID);*/
 
 // Select difficulty level
 
-function GetSelectedDifficulty(){
-				var e = document.getElementById("difficulty-select");
-				var result = e.options[e.selectedIndex].value;
-				
-				document.getElementById("result").innerHTML = result;
-			}
+var selectedDifficulty = document.getElementById("difficulty-select");
+var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
 
-			function GetSelectedText(){
-				var e = document.getElementById("difficulty-select");
-				var result = e.options[e.selectedIndex].text;
-				
-				document.getElementById("result").innerHTML = result;
-			}
-
+console.log(newDifficulty);
+            
 // Select number of questions
 
 // Config object to store all picked options from selection section
