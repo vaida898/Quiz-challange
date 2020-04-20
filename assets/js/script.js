@@ -18,10 +18,40 @@ function selectCat() {
             });
         })
 }
+/*var e = document.getElementById("category-select");
+var categoryID = e.options[e.selectedIndex].value;
+
+var e = document.getElementById("category-select");
+var categoryID  = e.options[e.selectedIndex].text;
+console.log(categoryID);*/
 
 // Select difficulty level
 
+function GetSelectedDifficulty(){
+				var e = document.getElementById("difficulty-select");
+				var result = e.options[e.selectedIndex].value;
+				
+				document.getElementById("result").innerHTML = result;
+			}
+
+			function GetSelectedText(){
+				var e = document.getElementById("difficulty-select");
+				var result = e.options[e.selectedIndex].text;
+				
+				document.getElementById("result").innerHTML = result;
+			}
+
 // Select number of questions
+
+// Config object to store all picked options from selection section
+
+let config = {
+    'category' : '',
+    'difficulty' : '',
+    'questions' : ''
+}
+
+
 
 // Start game
 
