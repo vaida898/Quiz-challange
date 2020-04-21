@@ -27,22 +27,37 @@ console.log(categoryID);*/
 
 // Select difficulty level
 
-var selectedDifficulty = document.getElementById("difficulty-select");
-var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
+function selectDiff(difficulty) {
+    const difficultySelect = $('#difficulty-select');
+    fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            difficulty.forEach(difficulty => {
+                difficultySelect.append(
+                    `<option value="${difficulty.name}"></option>`,
+                );
+            });
+        })
+}
 
-console.log(newDifficulty);
+//var selectedDifficulty = document.getElementById("difficulty-select");
+//var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
             
 // Select number of questions
 
-// Config object to store all picked options from selection section
-
-let config = {
-    'category' : '',
-    'difficulty' : '',
-    'questions' : ''
+function getQuestions(categoryID, difficulty){
+	const questionDiv = $("#questions-select");
+	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
+	.then(res => res.json())
+	.then(data => {
+		data.results.forEach(question => {
+			questionDiv.append(`
+			<h1>${question.question}<h1>`)
+        })
+        console.log(data);
+	}) 
 }
-
-
 
 // Start game
 
@@ -51,7 +66,6 @@ let config = {
 // Score and correct and wrong answers
 
 // Animations between page's loads
-
 
 $("#start-btn").click(function () {
     $("#question").show().addClass("animation"); 
@@ -116,18 +130,7 @@ $("#submit-btn").click(function () {
 
 
 /*
-function getQuestions(categoryID, difficulty){
-	const questionDiv = $("#questions-select");
-	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
-	.then(res => res.json())
-	.then(data => {
-		data.results.forEach(question => {
-			questionDiv.append(`
-			<h1>${question.question}<h1>`)
-        })
-        console.log(data);
-	}) 
-}
+
 
 function getValues(){
 const select = $(".selectSomething");
