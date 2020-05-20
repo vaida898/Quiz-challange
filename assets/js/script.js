@@ -18,6 +18,20 @@ function selectCat() {
             });
         })
 }
+selectCat();
+
+document.addEventListener('DOMContentLoaded', function () {
+   var input = document.getElementById('category-select');
+   if (localStorage['category-select']) { // if job is set
+       input.value = localStorage['category-select']; // set the value
+   }
+   input.onchange = function () {
+        localStorage['category-select'] = this.value; // change localStorage on change
+        console.log(localStorage);
+    }
+});
+
+
 /*var e = document.getElementById("category-select");
 var categoryID = e.options[e.selectedIndex].value;
 
