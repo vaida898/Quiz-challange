@@ -1,4 +1,14 @@
+const playButton = document.getElementById('play-btn')
+
+startButton.addEventListener(click, 'startGame')
+
+
 // Start game
+$("#play-btn").click(function () {
+    $("#selection").show().addClass("animation"); 
+    $("#main").hide(); 
+});
+
 function startGame() {
 
 }
@@ -13,14 +23,6 @@ function selectAnswer() {
 
 }
 
-
-
-
-// Play Game
-$("#play-btn").click(function () {
-    $("#selection").show().addClass("animation"); 
-    $("#main").hide(); 
-});
 
 // Select Category and save variable
 function selectCat() {
@@ -38,6 +40,7 @@ function selectCat() {
 }
 selectCat();
 
+/*
 document.addEventListener('DOMContentLoaded', function () {
    var input = document.getElementById('category-select');
    if (localStorage['category-select']) { // if job is set
@@ -47,10 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage['category-select'] = this.value; // change localStorage on change
         console.log(localStorage);
     }
-});
+}); */
 
-
-/*var e = document.getElementById("category-select");
+/* var e = document.getElementById("category-select");
 var categoryID = e.options[e.selectedIndex].value;
 
 var e = document.getElementById("category-select");
