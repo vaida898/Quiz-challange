@@ -1,16 +1,18 @@
 const playButton = document.getElementById('play-btn')
+const questionContainerElement = document.getElementById('question')
 
-startButton.addEventListener(click, 'startGame')
+playButton.addEventListener('click', startGame)
 
 
 // Start game
-$("#play-btn").click(function () {
+$("#play-btn").click(function startGame() {
     $("#selection").show().addClass("animation"); 
     $("#main").hide(); 
 });
 
 function startGame() {
-
+    console.log('started');
+    setNextQuestion()
 }
 
 // Get another question 
@@ -61,7 +63,7 @@ console.log(categoryID);*/
 
 // Select difficulty level
 
-function selectDiff(difficulty) {
+/* function selectDiff(difficulty) {
     const difficultySelect = $('#difficulty-select');
     fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
         .then((res) => res.json())
@@ -80,7 +82,7 @@ selectDiff();
 //var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
             
 // Select number of questions
-
+/*
 function getQuestions(categoryID, difficulty){
 	const questionDiv = $("#questions-select");
 	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
