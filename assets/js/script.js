@@ -54,6 +54,7 @@ function selectDiff(difficulty) {
             });
         })
 }
+selectDiff();
 
 //var selectedDifficulty = document.getElementById("difficulty-select");
 //var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
@@ -72,6 +73,7 @@ function getQuestions(categoryID, difficulty){
         console.log(data);
 	}) 
 }
+getQuestions();
 
 // Start game
 
