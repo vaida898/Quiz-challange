@@ -1,3 +1,21 @@
+// Start game
+function startGame() {
+
+}
+
+// Get another question 
+function setNextQuestion() {
+
+}
+
+// Select the answer 
+function selectAnswer() {
+
+}
+
+
+
+
 // Play Game
 $("#play-btn").click(function () {
     $("#selection").show().addClass("animation"); 
