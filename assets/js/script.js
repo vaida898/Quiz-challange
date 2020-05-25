@@ -26,6 +26,10 @@ function selectAnswer() {
 }
 
 
+
+const questions = []
+
+
 // Select Category and save variable
 function selectCat() {
     const categorySelect = $('#category-select');
@@ -42,41 +46,69 @@ function selectCat() {
 }
 selectCat();
 
-/*
-document.addEventListener('DOMContentLoaded', function () {
-   var input = document.getElementById('category-select');
-   if (localStorage['category-select']) { // if job is set
-       input.value = localStorage['category-select']; // set the value
-   }
-   input.onchange = function () {
-        localStorage['category-select'] = this.value; // change localStorage on change
-        console.log(localStorage);
+// Tutor's help
+function getData(difficulty) {
+
+    var url = `https://opentdb.com/api.php?amount=10&difficulty=easy`
+
+    // var url = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`
+
+    // Create a request 
+    var xhttp = new XMLHttpRequest();
+    
+    // Set the request as we want it
+    xhttp.onreadystatechange = function() {
+    
+    if (this.readyState == 4 && this.status == 200) {
+
+        // Code to be ran if the request is succesful
+        var data_as_string = this.responseText;
+        var data_as_object = JSON.parse(this.responseText);
+        console.log("*** data_as_string ***");
+        console.log(data_as_string);
+        console.log("*** data_as_object ***");
+        console.log(data_as_object);
+
+        // If we wanted to put the data in the "demo" tag in our html code:
+        // document.getElementById("demo").innerHTML = this.responseText;
+    
+    } else if (this.readyState == 4 && this.status != 200) {
+
+        // Code to be ran if the request is not successful
+        console.log("An error happened.");
+    
     }
-}); */
 
-/* var e = document.getElementById("category-select");
-var categoryID = e.options[e.selectedIndex].value;
+  };
 
-var e = document.getElementById("category-select");
-var categoryID  = e.options[e.selectedIndex].text;
-console.log(categoryID);*/
+  // Send the request   
+  xhttp.open("GET", url, true);
+  xhttp.send();
+
+}
+
+getData("Easy");
+
+// Tutor's help - end
+
+
 
 // Select difficulty level
 
-/* function selectDiff(difficulty) {
+function selectDiff(difficulty) {
     const difficultySelect = $('#difficulty-select');
     fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
-            difficulty.forEach(difficulty => {
+            // console.log(data);
+            results.forEach(difficulty => {
                 difficultySelect.append(
-                    `<option value="${difficulty.name}"></option>`,
+                    `<option value="${difficulty}"></option>`,
                 );
             });
         })
 }
-selectDiff();
+selectDiff('Easy');
 
 //var selectedDifficulty = document.getElementById("difficulty-select");
 //var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
@@ -104,7 +136,7 @@ getQuestions();
 // Score and correct and wrong answers
 
 // Animations between page's loads
-
+*/
 $("#start-btn").click(function () {
     $("#question").show().addClass("animation"); 
     $("#selection").hide(); 
