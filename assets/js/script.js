@@ -101,7 +101,7 @@ function selectDiff(difficulty) {
         .then((res) => res.json())
         .then((data) => {
             // console.log(data);
-            results.forEach(difficulty => {
+            data.results.forEach(difficulty => {
                 difficultySelect.append(
                     `<option value="${difficulty}"></option>`,
                 );
