@@ -1,7 +1,8 @@
 const playButton = document.getElementById('play-btn')
-const questionContainerElement = document.getElementById('question')
+const startButton = document.getElementById('start-btn')
 
 playButton.addEventListener('click', startGame)
+startButton.addEventListener('click', dropdownOptions)
 
 
 // Start game
@@ -25,11 +26,6 @@ function selectAnswer() {
 
 }
 
-
-
-const questions = []
-
-
 // Select Category and save variable
 function selectCat() {
     const categorySelect = $('#category-select');
@@ -45,6 +41,16 @@ function selectCat() {
         })
 }
 selectCat();
+
+// Options from dropdown menu are saved to URL
+
+function dropdownOptions () {
+    let dropCat = document.getElementById("category-select").value;
+    let dropDiff = document.getElementById("difficulty-select").value;    
+    let dropQuestions = document.getElementById("questions-select").value;
+    console.log(dropCat, dropDiff, dropQuestions);
+}
+dropdownOptions();
 
 // Tutor's help
 function getData(difficulty) {
@@ -95,8 +101,9 @@ getData("Easy");
 
 // Select difficulty level
 
-function selectDiff(difficulty) {
+function selectDiff(difficulty, questions) {
     const difficultySelect = $('#difficulty-select');
+    const numberOfQuestions = $('#questions-select');
     fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
         .then((res) => res.json())
         .then((data) => {
