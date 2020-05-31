@@ -1,9 +1,9 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
-const questionElement = document.getElementById('question')
+//const questionElement = document.getElementById('question')
 const asnwerButtonsElement = document.getElementById('qst-btn')
-
-const randomQuestions, currentQuestion
+let randomQuestions;
+let currentQuestion;
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
@@ -39,7 +39,7 @@ function selectCat() {
 selectCat();
 
 // Getting variable values from dropdown menu items
-function dropdownOptions () {
+function dropdownOptions() {
     let dropCat = document.getElementById("category-select").value;
     let dropDiff = document.getElementById("difficulty-select").value;    
     let dropQuestions = document.getElementById("questions-select").value;
@@ -64,16 +64,16 @@ function questionID(dropCat, dropDiff, dropQuestions) {
 }
 questionID();
 
-
+/*
 // Get another question 
 function setNextQuestion() {
     displayQuestion(randomQuestions[currentQuestion])
-}
+}*/
 
-// display Question
+/*// display Question
 function displayQuestion(question) {
-
-}
+   questionElement.innerText = question.question
+}*/
 
 // Select the answer 
 function selectAnswer() {
