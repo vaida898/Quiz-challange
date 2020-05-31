@@ -1,5 +1,9 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
+const questionElement = document.getElementById('question')
+const asnwerButtonsElement = document.getElementById('qst-btn')
+
+const randomQuestions, currentQuestion
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
@@ -13,6 +17,8 @@ $("#play-btn").click(function startGame() {
 
 function startGame() {
     console.log('started');
+    randomQuestions = question.sort(() => Math.random() - .5) 
+    currentQuestion = 0
     setNextQuestion()
 }
 
@@ -42,25 +48,30 @@ function dropdownOptions () {
 dropdownOptions();
 
 // Generate an URL link to fetch questions from API
-function questionHeader(dropCat, dropDiff, dropQuestions) {
-    const difficultySelect = $('#difficulty-select');
-    const numberOfQuestions = $('#questions-select');
-    fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
+function questionID(dropCat, dropDiff, dropQuestions) {
+    const questionTitle = $('#questionTitle');
+    fetch(`https://opentdb.com/api.php?amount=${dropQuestions}&category=${dropCat}&difficulty=${dropDiff}`)
         .then((res) => res.json())
         .then((data) => {
             // console.log(data);
-            data.results.forEach(difficulty => {
-                difficultySelect.append(
-                    `<option value="${difficulty}"></option>`,
+            data.results.forEach(question => {
+                questionTitle.append(
+                    `<h1>${question.question}<h1>`,
                 );
+                console.log(data);
             });
         })
 }
-selectDiff('Easy');
+questionID();
 
 
 // Get another question 
 function setNextQuestion() {
+    displayQuestion(randomQuestions[currentQuestion])
+}
+
+// display Question
+function displayQuestion(question) {
 
 }
 
@@ -71,11 +82,6 @@ function selectAnswer() {
 
 
 
-
-
-
-//var selectedDifficulty = document.getElementById("difficulty-select");
-//var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
             
 // Select number of questions
 /*
