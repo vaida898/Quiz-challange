@@ -16,17 +16,7 @@ function startGame() {
     setNextQuestion()
 }
 
-// Get another question 
-function setNextQuestion() {
-
-}
-
-// Select the answer 
-function selectAnswer() {
-
-}
-
-// Select Category and save variable
+// Fetch category value from API
 function selectCat() {
     const categorySelect = $('#category-select');
     fetch('https://opentdb.com/api_category.php')
@@ -42,8 +32,7 @@ function selectCat() {
 }
 selectCat();
 
-// Options from dropdown menu are saved to URL
-
+// Getting variable values from dropdown menu items
 function dropdownOptions () {
     let dropCat = document.getElementById("category-select").value;
     let dropDiff = document.getElementById("difficulty-select").value;    
@@ -52,56 +41,8 @@ function dropdownOptions () {
 }
 dropdownOptions();
 
-// Tutor's help
-function getData(difficulty) {
-
-    var url = `https://opentdb.com/api.php?amount=10&difficulty=easy`
-
-    // var url = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`
-
-    // Create a request 
-    var xhttp = new XMLHttpRequest();
-    
-    // Set the request as we want it
-    xhttp.onreadystatechange = function() {
-    
-    if (this.readyState == 4 && this.status == 200) {
-
-        // Code to be ran if the request is succesful
-        var data_as_string = this.responseText;
-        var data_as_object = JSON.parse(this.responseText);
-        console.log("*** data_as_string ***");
-        console.log(data_as_string);
-        console.log("*** data_as_object ***");
-        console.log(data_as_object);
-
-        // If we wanted to put the data in the "demo" tag in our html code:
-        // document.getElementById("demo").innerHTML = this.responseText;
-    
-    } else if (this.readyState == 4 && this.status != 200) {
-
-        // Code to be ran if the request is not successful
-        console.log("An error happened.");
-    
-    }
-
-  };
-
-  // Send the request   
-  xhttp.open("GET", url, true);
-  xhttp.send();
-
-}
-
-getData("Easy");
-
-// Tutor's help - end
-
-
-
-// Select difficulty level
-
-function selectDiff(difficulty, questions) {
+// Generate an URL link to fetch questions from API
+function questionHeader(dropCat, dropDiff, dropQuestions) {
     const difficultySelect = $('#difficulty-select');
     const numberOfQuestions = $('#questions-select');
     fetch(`https://opentdb.com/api.php?difficulty=${difficulty}`)
@@ -116,6 +57,22 @@ function selectDiff(difficulty, questions) {
         })
 }
 selectDiff('Easy');
+
+
+// Get another question 
+function setNextQuestion() {
+
+}
+
+// Select the answer 
+function selectAnswer() {
+
+}
+
+
+
+
+
 
 //var selectedDifficulty = document.getElementById("difficulty-select");
 //var newDifficulty = selectedDifficulty.options[selectedDifficulty.selectedIndex].value;
@@ -186,7 +143,52 @@ $("#submit-btn").click(function () {
 
 
 
+/*
+// Tutor's help
+function getData(difficulty) {
 
+    var url = `https://opentdb.com/api.php?amount=10&difficulty=easy`
+
+    // var url = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`
+
+    // Create a request 
+    var xhttp = new XMLHttpRequest();
+    
+    // Set the request as we want it
+    xhttp.onreadystatechange = function() {
+    
+    if (this.readyState == 4 && this.status == 200) {
+
+        // Code to be ran if the request is succesful
+        var data_as_string = this.responseText;
+        var data_as_object = JSON.parse(this.responseText);
+        console.log("*** data_as_string ***");
+        console.log(data_as_string);
+        console.log("*** data_as_object ***");
+        console.log(data_as_object);
+
+        // If we wanted to put the data in the "demo" tag in our html code:
+        // document.getElementById("demo").innerHTML = this.responseText;
+    
+    } else if (this.readyState == 4 && this.status != 200) {
+
+        // Code to be ran if the request is not successful
+        console.log("An error happened.");
+    
+    }
+
+  };
+
+  // Send the request   
+  xhttp.open("GET", url, true);
+  xhttp.send();
+
+}
+
+getData("Easy");
+
+// Tutor's help - end
+*/
 
 
 
