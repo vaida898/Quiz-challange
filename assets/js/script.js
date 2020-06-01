@@ -17,9 +17,9 @@ $("#play-btn").click(function startGame() {
 
 function startGame() {
     console.log('started');
-    randomQuestions = question.sort(() => Math.random() - .5) 
+    //randomQuestions = question.sort(() => Math.random() - .5) 
     currentQuestion = 0
-    setNextQuestion()
+    //setNextQuestion()
 }
 
 // Fetch category value from API
@@ -40,12 +40,18 @@ selectCat();
 
 // Getting variable values from dropdown menu items
 function dropdownOptions() {
-    var dropCat = document.getElementById('category-select'); 
+    var dropCat = document.getElementById('category-select');
+    console.log(dropCat); 
     selectedCategory = dropCat.options[dropCat.selectedIndex].value;
+    console.log(selectedCategory);
     var dropDiff = document.getElementById('difficulty-select'); 
+    console.log(dropDiff);
     selectedDifficulty = dropDiff.options[dropDiff.selectedIndex].value;
+    console.log(selectedDifficulty);
     var dropQuestions = document.getElementById('questions-select'); 
+    console.log(dropQuestions);
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
+    console.log(selectedQuestions);
 }
 
 /*
@@ -59,7 +65,7 @@ dropdownOptions();
 */
 
 // Generate an URL link to fetch questions from API
-function questionID(selectedCategory, selectedDifficulty, selectedQuestions) {
+function questionID() {
     dropdownOptions();
     console.log(selectedCategory, selectedDifficulty, selectedQuestions);
     console.log(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`);
@@ -76,7 +82,7 @@ function questionID(selectedCategory, selectedDifficulty, selectedQuestions) {
             });
         })
 }
-questionID();
+questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 /*
 // Get another question 
