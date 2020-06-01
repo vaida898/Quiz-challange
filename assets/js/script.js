@@ -67,23 +67,22 @@ dropdownOptions();
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
-    console.log(selectedCategory, selectedDifficulty, selectedQuestions);
     console.log(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`);
     const questionTitle = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
+        //.then(res => console.log(res))
         .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            data.results.forEach(question => {
-                questionTitle.append(
-                    `<h1>${question.question}<h1>`,
-                );
-                console.log(data);
-            });
-        })
+        .then((data) => console.log(data))
+        //.then((data) =>  {
+            //data.results.forEach(question => {
+                //questionTitle.append(
+                 //   `<h1>${question.question}<h1>`,
+                //);
+               
+           // });
+        //})
 }
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
-
 /*
 // Get another question 
 function setNextQuestion() {
