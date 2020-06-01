@@ -1,9 +1,18 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
+const question = document.getElementById('questionTitle')
+const choice = Array.from(document.getElementByClassName('qst-btn'));
 //const questionElement = document.getElementById('question')
 const asnwerButtonsElement = document.getElementById('qst-btn')
+var selectedCategory;
+var selectedDifficulty;
+var selectedQuestions;
 let randomQuestions;
-let currentQuestion;
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+let currentQuestion = {};
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
@@ -40,20 +49,35 @@ selectCat();
 
 // Getting variable values from dropdown menu items
 function dropdownOptions() {
+    var dropCat = document.getElementById('category-select'); 
+    selectedCategory = dropCat.options[dropCat.selectedIndex].value;
+    var dropDiff = document.getElementById('difficulty-select'); 
+    selectedDifficulty = dropDiff.options[dropDiff.selectedIndex].value;
+    var dropQuestions = document.getElementById('questions-select'); 
+    selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
+}
+
+
+
+/*
+function dropdownOptions() {
     let dropCat = document.getElementById("category-select").value;
     let dropDiff = document.getElementById("difficulty-select").value;    
     let dropQuestions = document.getElementById("questions-select").value;
     console.log(dropCat, dropDiff, dropQuestions);
 }
-dropdownOptions();
+dropdownOptions();*/
 
 // Generate an URL link to fetch questions from API
-function questionID(dropCat, dropDiff, dropQuestions) {
+function questionID(selectedCategory, selectedDifficulty, selectedQuestions) {
+    dropdownOptions();
+    console.log(selectedCategory, selectedDifficulty, selectedQuestions);
+    console.log(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`);
     const questionTitle = $('#questionTitle');
-    fetch(`https://opentdb.com/api.php?amount=${dropQuestions}&category=${dropCat}&difficulty=${dropDiff}`)
+    fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         .then((res) => res.json())
         .then((data) => {
-            // console.log(data);
+            console.log(data);
             data.results.forEach(question => {
                 questionTitle.append(
                     `<h1>${question.question}<h1>`,
