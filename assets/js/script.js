@@ -72,17 +72,19 @@ function questionID() {
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
         .then((res) => res.json())
-        .then((data) => console.log(data))
-        //.then((data) =>  {
-            //data.results.forEach(question => {
-                //questionTitle.append(
-                 //   `<h1>${question.question}<h1>`,
-                //);
+        //.then((data) => console.log(data))
+        .then((data) =>  {
+            data.results.forEach(question => {
+                questionTitle.append(
+                    `<h1>${question.question}<h1>`,
+                );
                
-           // });
-        //})
+            });
+        })
 }
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+
+
 /*
 // Get another question 
 function setNextQuestion() {
