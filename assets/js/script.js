@@ -1,22 +1,13 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
-const question = document.getElementById('questionTitle')
-const choice = Array.from(document.getElementByClassName('qst-btn'));
-//const questionElement = document.getElementById('question')
-const asnwerButtonsElement = document.getElementById('qst-btn')
+const choice = document.getElementById('qst-btn')
 var selectedCategory;
 var selectedDifficulty;
 var selectedQuestions;
 let randomQuestions;
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-let currentQuestion = {};
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
-
 
 // Start game
 $("#play-btn").click(function startGame() {
@@ -57,8 +48,6 @@ function dropdownOptions() {
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
 
-
-
 /*
 function dropdownOptions() {
     let dropCat = document.getElementById("category-select").value;
@@ -66,7 +55,8 @@ function dropdownOptions() {
     let dropQuestions = document.getElementById("questions-select").value;
     console.log(dropCat, dropDiff, dropQuestions);
 }
-dropdownOptions();*/
+dropdownOptions();
+*/
 
 // Generate an URL link to fetch questions from API
 function questionID(selectedCategory, selectedDifficulty, selectedQuestions) {
@@ -128,9 +118,10 @@ getQuestions();
 // Pick answer from four choices and press button submit
 
 // Score and correct and wrong answers
+*/
+
 
 // Animations between page's loads
-*/
 $("#start-btn").click(function () {
     $("#question").show().addClass("animation"); 
     $("#selection").hide(); 
@@ -224,6 +215,35 @@ getData("Easy");
 
 
 
+//let questionCounter = 0;
+//let acceptingAnswers = true;
+//let score = 0;//
+//const question = document.getElementById('questionTitle')
+//const choice = Array.from(document.getElementByClassName('qst-btn'));
+//const questionElement = document.getElementById('question')
+
+//let availableQuestions = [];
+//let currentQuestion = {};
+
+// CONSTANTS
+//const CORRECT_BONUS = 1;
+
+/*
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [];
+    getNewQuestion();
+}
+startGame();
+
+getNewQuestion = () => {
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+}
+*/
 
 
 
