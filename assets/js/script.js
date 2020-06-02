@@ -41,28 +41,12 @@ selectCat();
 // Getting variable values from dropdown menu items
 function dropdownOptions() {
     var dropCat = document.getElementById('category-select');
-    console.log(dropCat); 
     selectedCategory = dropCat.options[dropCat.selectedIndex].value;
-    console.log(selectedCategory);
     var dropDiff = document.getElementById('difficulty-select'); 
-    console.log(dropDiff);
     selectedDifficulty = dropDiff.options[dropDiff.selectedIndex].value;
-    console.log(selectedDifficulty);
     var dropQuestions = document.getElementById('questions-select'); 
-    console.log(dropQuestions);
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
-    console.log(selectedQuestions);
 }
-
-/*
-function dropdownOptions() {
-    let dropCat = document.getElementById("category-select").value;
-    let dropDiff = document.getElementById("difficulty-select").value;    
-    let dropQuestions = document.getElementById("questions-select").value;
-    console.log(dropCat, dropDiff, dropQuestions);
-}
-dropdownOptions();
-*/
 
 // Generate an URL link to fetch questions from API
 function questionID() {
@@ -254,7 +238,15 @@ getNewQuestion = () => {
 
 
 
-
+/*
+function dropdownOptions() {
+    let dropCat = document.getElementById("category-select").value;
+    let dropDiff = document.getElementById("difficulty-select").value;    
+    let dropQuestions = document.getElementById("questions-select").value;
+    console.log(dropCat, dropDiff, dropQuestions);
+}
+dropdownOptions();
+*/
 
 
 
