@@ -51,7 +51,6 @@ function dropdownOptions() {
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
-    console.log(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`);
     const questionTitle = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
