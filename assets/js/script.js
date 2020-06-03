@@ -12,12 +12,20 @@ let randomQuestions;
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
+submitButton.addEventListener('click', displayResults)
 
 // Start game
 $("#play-btn").click(function startGame() {
     $("#selection").show().addClass("animation"); 
     $("#main").hide(); 
 });
+
+// Building quiz game
+function quizGame() {
+    const outputHTML = [];
+
+}
+
 
 function startGame() {
     console.log('started');
@@ -89,6 +97,10 @@ function selectAnswer() {
 }
 
 
+// Display score then game is finished
+function displayScore() {
+
+}
 
             
 // Select number of questions
