@@ -9,7 +9,7 @@ const answerELement = document.getElementsByClassName('qst-btn')
 
 var selectedCategory;
 var selectedDifficulty;
-var currentQuestions, randomQuestions
+let currentQuestions, randomQuestions
 
 
 playButton.addEventListener('click', startGame)
@@ -23,16 +23,16 @@ $("#play-btn").click(function startGame() {
 });
 
 // Building quiz game
-function quizGame() {
+/*function quizGame() {
     const outputHTML = [];
 
-}
+}*/
 
 
 function startGame() {
     console.log('started');
     //randomQuestions = question.sort(() => Math.random() - .5) 
-    currentQuestion = 0
+    currentQuestions = 0
     //setNextQuestion()
 }
 
@@ -76,8 +76,8 @@ function questionID() {
                 questionTitle.append(
                     `<h1>${question.question}<h1>`,
                 );
-               nextQuestion();
-               console.log(nextQuestion);
+               //nextQuestion();
+               //console.log(nextQuestion);
             });
         })
 }
@@ -88,34 +88,33 @@ questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 let counter = 0;
 
 function getQuestion(data) {
-     return question = data.results[counter].question;
+    return question = data.results[counter].question;
 }
 
-
+// get next question
 function nextQuestion() {
     displayQuestion(randomQuestions[currentQuestions])
 }
 
+// display a question
 function displayQuestion(question) {
-
+    questionElement.innerText = data.results.question
+    question.answer.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.text 
+    button.classList.add('btn')
+    if (asnwer.correct) {
+        button.dataset.innerText = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerELement.appendChild(button)   
+    })
 }
-
-/*
-// Get another question 
-function setNextQuestion() {
-    displayQuestion(randomQuestions[currentQuestion])
-}*/
-
-/*// display Question
-function displayQuestion(question) {
-   questionElement.innerText = question.question
-}*/
 
 // Select the answer 
-function selectAnswer() {
+function selectAnswer(e) {
 
 }
-
 
 // Display score then game is finished
 function displayScore() {
