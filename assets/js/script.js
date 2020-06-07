@@ -7,12 +7,12 @@ const submitButtton = document.getElementById('submit-btn')
 
 var selectedCategory;
 var selectedDifficulty;
-var selectedQuestions;
-let randomQuestions;
+var currentQuestions, randomQuestions
+
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
-submitButton.addEventListener('click', displayResults)
+//submitButton.addEventListener('click', displayResults)
 
 // Start game
 $("#play-btn").click(function startGame() {
@@ -63,6 +63,7 @@ function dropdownOptions() {
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
+    randomQuestions = question.sort(() => Math.random() - .5);
     const questionTitle = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
@@ -73,12 +74,29 @@ function questionID() {
                 questionTitle.append(
                     `<h1>${question.question}<h1>`,
                 );
-               
+               nextQuestion();
+               console.log(nextQuestion);
             });
         })
 }
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
+
+// Getting questions displayed from API
+let counter = 0;
+
+function getQuestion(data) {
+     return question = data.results[counter].question;
+}
+
+
+function nextQuestion() {
+    displayQuestion(randomQuestions[currentQuestions])
+}
+
+function displayQuestion(question) {
+
+}
 
 /*
 // Get another question 
