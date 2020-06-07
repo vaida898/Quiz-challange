@@ -14,7 +14,10 @@ let currentQuestions, randomQuestions
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
-//submitButton.addEventListener('click', displayResults)
+submitButton.addEventListener('click', () => {
+    currentQuestions++
+    nextQuestion()
+})
 
 // Start game
 $("#play-btn").click(function startGame() {
@@ -115,10 +118,12 @@ function displayQuestion(question) {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    statusClass(document.body, correct)
-    Array.from(answerELement.children).forEach(button => {
-        statusClass(button, button.dataset.correct)
-    })
+    if(randomQuestions > currentQuestions + 1) {
+        $("#question").show();
+    } else {
+        $("#score").show();
+        $("#question").hide();
+    }
 }
 
 // Display score then game is finished
