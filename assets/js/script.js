@@ -65,7 +65,7 @@ function dropdownOptions() {
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
-    randomQuestions = question.sort(() => Math.random() - .5);
+    //randomQuestions = question.sort(() => Math.random() - .5);
     const questionTitle = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
@@ -113,7 +113,12 @@ function displayQuestion(question) {
 
 // Select the answer 
 function selectAnswer(e) {
-
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    statusClass(document.body, correct)
+    Array.from(answerELement.children).forEach(button => {
+        statusClass(button, button.dataset.correct)
+    })
 }
 
 // Display score then game is finished
