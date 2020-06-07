@@ -1,9 +1,11 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
-const choice = document.getElementById('qst-btn')
 const gameContainer = document.getElementById('question')
 const scoreContainer = document.getElementById('score')
 const submitButtton = document.getElementById('submit-btn')
+
+const questionElement = document.getElementById('questionTitle')
+const answerELement = document.getElementsByClassName('qst-btn')
 
 var selectedCategory;
 var selectedDifficulty;
