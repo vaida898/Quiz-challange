@@ -1,11 +1,11 @@
 const playButton = document.getElementById('play-btn')
 const startButton = document.getElementById('start-btn')
-const gameContainer = document.getElementById('question')
-const scoreContainer = document.getElementById('score')
-const submitButtton = document.getElementById('submit-btn')
+//const gameContainer = document.getElementById('question')
+//const scoreContainer = document.getElementById('score')
+//const submitButtton = document.getElementById('submit-btn')
 
 const questionElement = document.getElementById('questionTitle')
-const answerELement = document.getElementsByClassName('qst-btn')
+//const answerELement = document.getElementsByClassName('qst-btn')
 
 var selectedCategory;
 var selectedDifficulty;
@@ -13,7 +13,7 @@ let currentQuestions, randomQuestions;
 
 
 playButton.addEventListener('click', startGame)
-//startButton.addEventListener('click', dropdownOptions)
+startButton.addEventListener('click', dropdownOptions)
 /*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
@@ -65,7 +65,7 @@ function dropdownOptions() {
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
 
-/*
+
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
@@ -87,7 +87,7 @@ function questionID() {
 }
 //questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
-*/
+
 // Getting questions displayed from API
 let counter = 0;
 
