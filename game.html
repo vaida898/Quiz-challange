@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-game</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+   
+    <section>
+        <div class="container-fluid text-center animation" id="selection">
+            <div class="row">
+                <div class="col">
+                    <h2 class="select-title text-center">Please choose your options:</h2>
+                    <select id="category-select" name="category">
+                        <option value="">Choose a category:</option>
+                    </select>
+                    <select id="difficulty-select" name="difficulty">
+                        <option value="">Choose a difficulty level:</option>
+                        <option value="easy">easy</option>
+                        <option value="medium">medium</option>
+                        <option value="hard">hard</option> 
+                    </select>
+                    <select id="questions-select" name="questions">
+                       <option value="">Choose a number of questions:</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="25">25</option>
+                    </select>
+                    <div class="row">
+                        <div class="col">
+                            <button onclick="questionID()" id="start-btn" class="btn btn-lg hvr-buzz active" role="button" aria-pressed="true">Start</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section> 
+        <div class="container-fluid animation" id="question">
+            <div class="row text-center">
+                <div class="col">
+                    <p id="questionTitle">Question</p>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <button class="btn qst-btn btn-lg hvr-glow active" role="button" aria-pressed="true">A - first answer</button>
+                            <button class="btn qst-btn btn-lg hvr-glow active" role="button" aria-pressed="true">B - second answer</button>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <button class="btn qst-btn btn-lg hvr-glow active" role="button" aria-pressed="true">C - third answer</button>
+                            <button class="btn qst-btn btn-lg hvr-glow active" role="button" aria-pressed="true">D - fourth answer</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button id="submit-btn" class="btn hvr-grow btn-lg animation active" role="button" aria-pressed="true">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="coantainer-fluid animation" id="score">
+            <div class="row text-center">
+                <div class="col">
+                    <h2 class="score-title text-center">Score</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <h3 class="scoreCount text-center">8/10</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5">
+                    <h3 class="correctAnswer">Correct Answers</h3>
+                </div>
+                <div class="col-3">
+                    <h3 class="wrongAnswer">Wrong Answers</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h3 class="answersTitle text-center">Question Number</h3>
+                </div>
+                <div class="col-5">
+                    <h3 class="answersYes text-left">Answer one</h3>
+                </div>
+                <div class="col-5">
+                    <h3 class="answersNo text-left">Answer two, Answer three, Answer four</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
