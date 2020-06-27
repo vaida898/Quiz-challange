@@ -48,7 +48,7 @@ body {
   }
 }
 
-#play-btn {
+.play-btn {
     position: center;
     margin-top: 5rem;  
     background-color: #F222D9;
