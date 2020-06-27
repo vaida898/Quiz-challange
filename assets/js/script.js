@@ -9,15 +9,15 @@ const answerELement = document.getElementsByClassName('qst-btn')
 
 var selectedCategory;
 var selectedDifficulty;
-let currentQuestions, randomQuestions
+let currentQuestions, randomQuestions;
 
 
 playButton.addEventListener('click', startGame)
-startButton.addEventListener('click', dropdownOptions)
-submitButton.addEventListener('click', () => {
+//startButton.addEventListener('click', dropdownOptions)
+/*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
-})
+})*/
 
 // Start game
 $("#play-btn").click(function startGame() {
@@ -65,6 +65,7 @@ function dropdownOptions() {
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
 
+/*
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
@@ -84,9 +85,9 @@ function questionID() {
             });
         })
 }
-questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+//questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
-
+*/
 // Getting questions displayed from API
 let counter = 0;
 
