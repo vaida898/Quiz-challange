@@ -1,16 +1,17 @@
-const playButton = document.getElementById('play-btn')
-const startButton = document.getElementById('start-btn')
-//const gameContainer = document.getElementById('question')
-//const scoreContainer = document.getElementById('score')
-//const submitButtton = document.getElementById('submit-btn')
+const playButton = document.getElementById('play-btn');
+const startButton = document.getElementById('start-btn');
+const questionElement = document.getElementById('questionTitle');
+const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 
-const questionElement = document.getElementById('questionTitle')
-//const answerELement = document.getElementsByClassName('qst-btn')
+let curretnQuestion = {};
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
 var selectedCategory;
 var selectedDifficulty;
-let currentQuestions, randomQuestions;
 
+let questions = [];
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
@@ -76,6 +77,29 @@ function questionID() {
         .then((res) => res.json())
         //.then((data) => console.log(data))
         .then((data) =>  {
+            questions = data.results.map((data) => {
+                const newQuestion = {
+                    question: data.question,
+                };
+
+                const questionAnswers = [...data.incorrect_answers];
+                newQuestion.answer = Math.floor(Math.random() * 4) + 1;
+                questionAnswers.splice(
+                    newQuestion.anser - 1, 0,
+                    data.correct_answers
+                );
+
+                questionAnswers.forEach((choice, index) => {
+                    newQuestion['choice' + (index + 1)] = choice;
+                });
+
+                return newQuestion;
+            });
+
+            questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+
+
+            /*
             data.results.forEach(question => {
                 questionTitle.append(
                     `<h1>${question.question}<h1>`,
@@ -85,7 +109,7 @@ function questionID() {
             });
         })
 }
-//questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+questionID(selectedCategory, selectedDifficulty, selectedQuestions);*/
 
 
 // Getting questions displayed from API
@@ -93,17 +117,17 @@ let counter = 0;
 
 function getQuestion(data) {
     return question = data.results[counter].question;
-}
+};
 
 // get next question
 function nextQuestion() {
-    displayQuestion(randomQuestions[currentQuestions])
-}
+    displayQuestion(randomQuestions[currentQuestions]);
+};
 
 // display a question
 function displayQuestion(question) {
     questionElement.innerText = data.results.question
-    question.answer.forEach(answer => {
+    question.answer.forEach((answer) => {
     const button = document.createElement('button')
     button.innerText = answer.text 
     button.classList.add('btn')
@@ -112,8 +136,8 @@ function displayQuestion(question) {
     }
     button.addEventListener('click', selectAnswer)
     answerELement.appendChild(button)   
-    })
-}
+    });
+};
 
 // Select the answer 
 function selectAnswer(e) {
@@ -124,7 +148,7 @@ function selectAnswer(e) {
     } else {
         $("#score").show();
         $("#question").hide();
-    }
+    };
 }
 
 // Display score then game is finished
@@ -310,10 +334,4 @@ const select = $(".selectSomething");
 	select.click(function() {
 		console.log($(this).val())
 		})
-}
-
-*/
-
-
-
-
+}*/
