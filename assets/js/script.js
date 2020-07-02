@@ -1,6 +1,6 @@
 const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
-const questionElement = document.getElementById('questionTitle');
+const question = document.getElementById('questionTitle');
 const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 
 let curretnQuestion = {};
@@ -10,6 +10,7 @@ let availableQuestions = [];
 
 var selectedCategory;
 var selectedDifficulty;
+var selectedQuestions;
 
 let questions = [];
 
@@ -77,7 +78,7 @@ function questionID() {
         .then((res) => res.json())
         //.then((data) => console.log(data))
         .then((data) =>  {
-            questions = data.results.map((data) => {
+            /* questions = data.results.map((data) => {
                 const newQuestion = {
                     question: data.question,
                 };
@@ -97,9 +98,9 @@ function questionID() {
             });
 
             questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+            */
 
-
-            /*
+            
             data.results.forEach(question => {
                 questionTitle.append(
                     `<h1>${question.question}<h1>`,
@@ -108,8 +109,8 @@ function questionID() {
                //console.log(nextQuestion);
             });
         })
-}
-questionID(selectedCategory, selectedDifficulty, selectedQuestions);*/
+};
+questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 
 // Getting questions displayed from API
@@ -149,7 +150,7 @@ function selectAnswer(e) {
         $("#score").show();
         $("#question").hide();
     };
-}
+};
 
 // Display score then game is finished
 function displayScore() {
@@ -191,37 +192,6 @@ $("#submit-btn").click(function () {
     $("#score").show().addClass("animation"); 
     $("#question").hide(); 
 });
-
-// Step one get the values from dropdowns 
-
-// var category = ''
-
-// Page loads shows only the start button 
-
-// Click the start button
-
-// Select a category 
-// when a user selects a category
-// save that to the category variable 
-// example : https://stackoverflow.com/questions/11991007/jquery-get-the-selected-dropdown-value-on-change
-// console.log(category)
-// console.log(typeOf(category))
-// use template literals to add category into url
-
-// Select difficulty 
-
-// Select number of q's 
-
-// We knnow the URL will always look like this: 
-// https://opentdb.com/api.php?amount=20&category=11&difficulty=easy
-
-// Step two make a call to the API with user choices 
-// var url = `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=easy`
-
-
-
-//Step three render questions to page 
-
 
 
 /*
@@ -305,33 +275,11 @@ getNewQuestion = () => {
 }
 */
 
-
-
 /*
-function dropdownOptions() {
-    let dropCat = document.getElementById("category-select").value;
-    let dropDiff = document.getElementById("difficulty-select").value;    
-    let dropQuestions = document.getElementById("questions-select").value;
-    console.log(dropCat, dropDiff, dropQuestions);
-}
-dropdownOptions();
-*/
-
-
-
-
-
-
-
-
-
-
-/*
-
-
 function getValues(){
 const select = $(".selectSomething");
 	select.click(function() {
 		console.log($(this).val())
 		})
-}*/
+}
+*/
