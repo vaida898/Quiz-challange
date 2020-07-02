@@ -2,6 +2,7 @@ const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
 const question = document.getElementById('questionTitle');
 const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
+console.log(answerOptions);
 
 let curretnQuestion = {};
 let score = 0;
@@ -37,7 +38,7 @@ $("#play-btn").click(function startGame() {
 function startGame() {
     console.log('started');
     //randomQuestions = question.sort(() => Math.random() - .5) 
-    currentQuestions = 0
+    currentQuestion = 0
     //setNextQuestion()
 }
 
@@ -122,7 +123,7 @@ function getQuestion(data) {
 
 // get next question
 function nextQuestion() {
-    displayQuestion(randomQuestions[currentQuestions]);
+    displayQuestion(randomQuestions[currentQuestion]);
 };
 
 // display a question
@@ -144,7 +145,7 @@ function displayQuestion(question) {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    if(randomQuestions > currentQuestions + 1) {
+    if(randomQuestions > currentQuestion + 1) {
         $("#question").show();
     } else {
         $("#score").show();
