@@ -8,6 +8,7 @@ let curretnQuestion = {};
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let results;
 
 var selectedCategory;
 var selectedDifficulty;
@@ -77,8 +78,9 @@ function questionID() {
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
         .then((res) => res.json())
-        //.then((data) => console.log(data))
+        // .then((data) => console.log(data))
         .then((data) =>  {
+            console.log(data);
             /* questions = data.results.map((data) => {
                 const newQuestion = {
                     question: data.question,
@@ -100,7 +102,7 @@ function questionID() {
 
             questionID(selectedCategory, selectedDifficulty, selectedQuestions);
             */
-
+            results = data;
             
             data.results.forEach(question => {
                 questionTitle.append(
