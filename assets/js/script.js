@@ -4,11 +4,14 @@ const question = document.getElementById('questionTitle');
 const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 console.log(answerOptions);
 
-let curretnQuestion = {};
-let score = 0;
-let questionCounter = 0;
+let currentQuestion = {};
+let questionsCounter = 0;
 let availableQuestions = [];
 let results;
+
+let questionArray = [];
+let questionOptions = [];
+let questionAnswer = [];
 
 var selectedCategory;
 var selectedDifficulty;
@@ -38,8 +41,9 @@ $("#play-btn").click(function startGame() {
 
 function startGame() {
     console.log('started');
-    //randomQuestions = question.sort(() => Math.random() - .5) 
-    currentQuestion = 0
+    questionCounter = 0;
+    availableQuestions = [...questionArray];
+    console.log(availableQuestions);
     //setNextQuestion()
 }
 
@@ -81,36 +85,33 @@ function questionID() {
         // .then((data) => console.log(data))
         .then((data) =>  {
             console.log(data);
-            /* questions = data.results.map((data) => {
-                const newQuestion = {
-                    question: data.question,
-                };
-
-                const questionAnswers = [...data.incorrect_answers];
-                newQuestion.answer = Math.floor(Math.random() * 4) + 1;
-                questionAnswers.splice(
-                    newQuestion.anser - 1, 0,
-                    data.correct_answers
-                );
-
-                questionAnswers.forEach((choice, index) => {
-                    newQuestion['choice' + (index + 1)] = choice;
-                });
-
-                return newQuestion;
-            });
-
-            questionID(selectedCategory, selectedDifficulty, selectedQuestions);
-            */
+       
             results = data;
             
             data.results.forEach(question => {
-                questionTitle.append(
-                    `<h1>${question.question}<h1>`,
-                );
+                questionArray.push(question.question);
+                question.incorrect_answers.push(question.correct_answer);
+                let allOptions = question.incorrect_answers;
+                questionOptions.push(allOptions);
+                questionAnswer.push(question.correct_answer);
+                // questionTitle.append(
+                    // `<h1>${question.question}<h1>`,
+                // );
                //nextQuestion();
                //console.log(nextQuestion);
             });
+            questionArray.forEach(function (item, index){
+                console.log(item, index);
+            });
+            questionOptions.forEach(function (item, index) {
+                console.log(item, index);
+            });
+            questionAnswer.forEach(function (item, index) {
+                console.log(item, index);
+            });
+            console.log("Array of Questions: " + questionArray);
+            console.log("Array of Options: " + questionOptions);
+            console.log("Array of Answers: " + questionAnswer);
         })
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
@@ -119,8 +120,11 @@ questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 // Getting questions displayed from API
 let counter = 0;
 
-function getQuestion(data) {
-    return question = data.results[counter].question;
+function getNewQuestion() {
+    questionsCounter++;
+
+
+    //return question = data.results[counter].question;
 };
 
 // get next question
