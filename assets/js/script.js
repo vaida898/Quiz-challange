@@ -1,12 +1,10 @@
 const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
 const question = document.getElementById('questionTitle');
-const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
-console.log(answerOptions);
+const answerOptions = document.getElementsByClassName('qst-btn');
 
 let currentQuestion = {};
 let questionsCounter = 0;
-let availableQuestions = [];
 let results;
 
 let questionArray = [];
@@ -28,8 +26,8 @@ startButton.addEventListener('click', dropdownOptions)
 
 // Start game
 $("#play-btn").click(function startGame() {
-    $("#selection").show().addClass("animation"); 
-    $("#main").hide(); 
+    $("#selection").show().addClass("animation");
+    $("#main").hide();
 });
 
 // Building quiz game
@@ -42,8 +40,6 @@ $("#play-btn").click(function startGame() {
 function startGame() {
     console.log('started');
     questionCounter = 0;
-    availableQuestions = [...questionArray];
-    console.log(availableQuestions);
     //setNextQuestion()
 }
 
@@ -67,9 +63,9 @@ selectCat();
 function dropdownOptions() {
     var dropCat = document.getElementById('category-select');
     selectedCategory = dropCat.options[dropCat.selectedIndex].value;
-    var dropDiff = document.getElementById('difficulty-select'); 
+    var dropDiff = document.getElementById('difficulty-select');
     selectedDifficulty = dropDiff.options[dropDiff.selectedIndex].value;
-    var dropQuestions = document.getElementById('questions-select'); 
+    var dropQuestions = document.getElementById('questions-select');
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
 
@@ -83,11 +79,11 @@ function questionID() {
         //.then(res => console.log(res))
         .then((res) => res.json())
         // .then((data) => console.log(data))
-        .then((data) =>  {
+        .then((data) => {
             console.log(data);
-       
+
             results = data;
-            
+
             data.results.forEach(question => {
                 questionArray.push(question.question);
                 question.incorrect_answers.push(question.correct_answer);
@@ -95,13 +91,14 @@ function questionID() {
                 questionOptions.push(allOptions);
                 questionAnswer.push(question.correct_answer);
                 // questionTitle.append(
-                    // `<h1>${question.question}<h1>`,
+                // `<h1>${question.question}<h1>`,
                 // );
-               //nextQuestion();
-               //console.log(nextQuestion);
+                //nextQuestion();
+                //console.log(nextQuestion);
             });
-            questionArray.forEach(function (item, index){
-                console.log(item, index);
+            questionArray.forEach(function (item, index) {
+                questionTitle.append(
+                    `<h1>${item}<h1>`);
             });
             questionOptions.forEach(function (item, index) {
                 console.log(item, index);
@@ -109,6 +106,16 @@ function questionID() {
             questionAnswer.forEach(function (item, index) {
                 console.log(item, index);
             });
+            //var availableQuestions = questionArray.concat(questionOptions, questionAnswer);
+            //console.log(availableQuestions);
+            let availableQuestions = [questionArray, questionOptions, questionAnswer];
+            let question = availableQuestions[0][2];
+            let options = availableQuestions[1][2];
+            let answer = availableQuestions[2][2];
+
+            let newQuestion = [question, options, answer];
+            console.log(newQuestion);
+
             console.log("Array of Questions: " + questionArray);
             console.log("Array of Options: " + questionOptions);
             console.log("Array of Answers: " + questionAnswer);
@@ -136,14 +143,14 @@ function nextQuestion() {
 function displayQuestion(question) {
     questionElement.innerText = data.results.question
     question.answer.forEach((answer) => {
-    const button = document.createElement('button')
-    button.innerText = answer.text 
-    button.classList.add('btn')
-    if (asnwer.correct) {
-        button.dataset.innerText = answer.correct
-    }
-    button.addEventListener('click', selectAnswer)
-    answerELement.appendChild(button)   
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (asnwer.correct) {
+            button.dataset.innerText = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerELement.appendChild(button)
     });
 };
 
@@ -151,7 +158,7 @@ function displayQuestion(question) {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    if(randomQuestions > currentQuestion + 1) {
+    if (randomQuestions > currentQuestion + 1) {
         $("#question").show();
     } else {
         $("#score").show();
@@ -164,7 +171,7 @@ function displayScore() {
 
 }
 
-            
+
 // Select number of questions
 /*
 function getQuestions(categoryID, difficulty){
@@ -191,13 +198,13 @@ getQuestions();
 
 // Animations between page's loads
 $("#start-btn").click(function () {
-    $("#question").show().addClass("animation"); 
-    $("#selection").hide(); 
+    $("#question").show().addClass("animation");
+    $("#selection").hide();
 });
 
 $("#submit-btn").click(function () {
-    $("#score").show().addClass("animation"); 
-    $("#question").hide(); 
+    $("#score").show().addClass("animation");
+    $("#question").hide();
 });
 
 
@@ -209,12 +216,12 @@ function getData(difficulty) {
 
     // var url = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`
 
-    // Create a request 
+    // Create a request
     var xhttp = new XMLHttpRequest();
-    
+
     // Set the request as we want it
     xhttp.onreadystatechange = function() {
-    
+
     if (this.readyState == 4 && this.status == 200) {
 
         // Code to be ran if the request is succesful
@@ -227,17 +234,17 @@ function getData(difficulty) {
 
         // If we wanted to put the data in the "demo" tag in our html code:
         // document.getElementById("demo").innerHTML = this.responseText;
-    
+
     } else if (this.readyState == 4 && this.status != 200) {
 
         // Code to be ran if the request is not successful
         console.log("An error happened.");
-    
+
     }
 
   };
 
-  // Send the request   
+  // Send the request
   xhttp.open("GET", url, true);
   xhttp.send();
 
