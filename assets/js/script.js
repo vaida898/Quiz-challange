@@ -101,24 +101,37 @@ function questionID() {
                     `<h1>${item}<h1>`);
             });
             questionOptions.forEach(function (item, index) {
-                console.log(item, index);
+                //console.log(item, index);
             });
             questionAnswer.forEach(function (item, index) {
-                console.log(item, index);
+                //console.log(item, index);
             });
             //var availableQuestions = questionArray.concat(questionOptions, questionAnswer);
             //console.log(availableQuestions);
-            let availableQuestions = [questionArray, questionOptions, questionAnswer];
+            /*let availableQuestions = [questionArray, questionOptions, questionAnswer];
             let question = availableQuestions[0][2];
             let options = availableQuestions[1][2];
             let answer = availableQuestions[2][2];
 
             let newQuestion = [question, options, answer];
-            console.log(newQuestion);
+            console.log(newQuestion);*/
 
-            console.log("Array of Questions: " + questionArray);
-            console.log("Array of Options: " + questionOptions);
-            console.log("Array of Answers: " + questionAnswer);
+            //console.log("Array of Questions: " + questionArray);
+           // console.log("Array of Options: " + questionOptions);
+           // console.log("Array of Answers: " + questionAnswer);
+
+            let availableQuestions = [];
+
+            for(i=0; i < questionArray.length; i++) {
+                let newQuestion = {
+                    "question" : questionArray[i],
+                    "options" : questionOptions[i],
+                    "answer" : questionAnswer[i]
+                };
+                availableQuestions.push(newQuestion);
+            }
+            console.log(availableQuestions);
+
         })
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
