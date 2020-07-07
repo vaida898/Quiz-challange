@@ -128,6 +128,8 @@ function questionID() {
                 };
                 availableQuestions.push(newQuestion);
             }
+            let showQuestion = availableQuestions[0];
+            console.log(showQuestion);
             console.log(availableQuestions);
 
         })
