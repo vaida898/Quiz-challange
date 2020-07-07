@@ -36,7 +36,6 @@ $("#play-btn").click(function startGame() {
 
 }*/
 
-
 function startGame() {
     console.log('started');
     questionCounter = 0;
@@ -68,7 +67,6 @@ function dropdownOptions() {
     var dropQuestions = document.getElementById('questions-select');
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
-
 
 // Generate an URL link to fetch questions from API
 function questionID() {
@@ -136,13 +134,35 @@ function questionID() {
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
+// Select the answer 
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    if (randomQuestions > currentQuestion + 1) {
+        $("#question").show();
+    } else {
+        $("#score").show();
+        $("#question").hide();
+    };
+};
 
+// Animations between page's loads
+$("#start-btn").click(function () {
+    $("#question").show().addClass("animation");
+    $("#selection").hide();
+});
+
+$("#submit-btn").click(function () {
+    $("#score").show().addClass("animation");
+    $("#question").hide();
+});
+
+/*
 // Getting questions displayed from API
 let counter = 0;
 
 function getNewQuestion() {
     questionsCounter++;
-
 
     //return question = data.results[counter].question;
 };
@@ -151,7 +171,9 @@ function getNewQuestion() {
 function nextQuestion() {
     displayQuestion(randomQuestions[currentQuestion]);
 };
+*/
 
+/*
 // display a question
 function displayQuestion(question) {
     questionElement.innerText = data.results.question
@@ -166,60 +188,14 @@ function displayQuestion(question) {
         answerELement.appendChild(button)
     });
 };
+*/
 
-// Select the answer 
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    if (randomQuestions > currentQuestion + 1) {
-        $("#question").show();
-    } else {
-        $("#score").show();
-        $("#question").hide();
-    };
-};
-
+/*
 // Display score then game is finished
 function displayScore() {
 
 }
-
-
-// Select number of questions
-/*
-function getQuestions(categoryID, difficulty){
-	const questionDiv = $("#questions-select");
-	fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
-	.then(res => res.json())
-	.then(data => {
-		data.results.forEach(question => {
-			questionDiv.append(`
-			<h1>${question.question}<h1>`)
-        })
-        console.log(data);
-	}) 
-}
-getQuestions();
-
-// Start game
-
-// Pick answer from four choices and press button submit
-
-// Score and correct and wrong answers
 */
-
-
-// Animations between page's loads
-$("#start-btn").click(function () {
-    $("#question").show().addClass("animation");
-    $("#selection").hide();
-});
-
-$("#submit-btn").click(function () {
-    $("#score").show().addClass("animation");
-    $("#question").hide();
-});
-
 
 /*
 // Tutor's help
