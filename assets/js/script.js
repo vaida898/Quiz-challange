@@ -127,20 +127,31 @@ function questionID() {
                     "answer" : questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
-            }
-            let i = 0;
+            };
 
+            let i = 0;
             let showQuestion = availableQuestions[i];
-            questionTitle.append(
+            question.append(
                 `<h1>${showQuestion.question}</h1>`
             );
+            answerOptions.append(
+                `<button>${showQuestion.options}</button>`
+            );
+            
+            newQuestion();
 
             console.log(showQuestion);
             console.log(availableQuestions);
-
         })
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+
+/*
+function newQuestion() {
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.lenth);
+
+}*/
 
 // Select the answer 
 function selectAnswer(e) {
