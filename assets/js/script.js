@@ -95,8 +95,8 @@ function questionID() {
                 //console.log(nextQuestion);
             });
             questionArray.forEach(function (item, index) {
-                questionTitle.append(
-                    `<h1>${item}<h1>`);
+                //questionTitle.append(
+                   // `<h1>${item}<h1>`);
             });
             questionOptions.forEach(function (item, index) {
                 //console.log(item, index);
@@ -128,7 +128,13 @@ function questionID() {
                 };
                 availableQuestions.push(newQuestion);
             }
-            let showQuestion = availableQuestions[0];
+            let i = 0;
+
+            let showQuestion = availableQuestions[i];
+            questionTitle.append(
+                `<h1>${showQuestion.question}</h1>`
+            );
+
             console.log(showQuestion);
             console.log(availableQuestions);
 
