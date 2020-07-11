@@ -67,18 +67,18 @@ function dropdownOptions() {
     var dropQuestions = document.getElementById('questions-select');
     selectedQuestions = dropQuestions.options[dropQuestions.selectedIndex].value;
 }
-
+//debugger;
 // Generate an URL link to fetch questions from API
 function questionID() {
     dropdownOptions();
     //randomQuestions = question.sort(() => Math.random() - .5);
-    const questionTitle = $('#questionTitle');
+    const question = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
         .then((res) => res.json())
         // .then((data) => console.log(data))
         .then((data) => {
-            console.log(data);
+            //console.log(data);
 
             results = data;
 
@@ -117,9 +117,12 @@ function questionID() {
             //console.log("Array of Questions: " + questionArray);
            // console.log("Array of Options: " + questionOptions);
            // console.log("Array of Answers: " + questionAnswer);
-
+        
+            debugger;
+            
+            let i = 0;
             let availableQuestions = [];
-
+           
             for(i=0; i < questionArray.length; i++) {
                 let newQuestion = {
                     "question" : questionArray[i],
@@ -128,16 +131,17 @@ function questionID() {
                 };
                 availableQuestions.push(newQuestion);
             };
-
-            let i = 0;
+            
             let showQuestion = availableQuestions[i];
             question.append(
                 `<h1>${showQuestion.question}</h1>`
             );
+            console.log(showQuestion.question);
             answerOptions.append(
                 `<button>${showQuestion.options}</button>`
+                
             );
-            
+            console.log(showQuestion.options);
             newQuestion();
 
             console.log(showQuestion);
