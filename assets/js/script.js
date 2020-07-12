@@ -1,9 +1,10 @@
 const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
-const question = document.getElementById('questionTitle');
-const answerOptions = document.getElementsByClassName('qst-btn');
+const questionTitle = document.getElementById('questionTitle');
+const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 
 var questionNum = 0;
+var availableQuestions = [];
 
 let currentQuestion = {};
 let questionsCounter = 0;
@@ -94,12 +95,11 @@ function questionID() {
                 // questionTitle.append(
                 // `<h1>${question.question}<h1>`,
                 // );
-                //nextQuestion();
-                //console.log(nextQuestion);
+
             });
             questionArray.forEach(function (item, index) {
                 //questionTitle.append(
-                   // `<h1>${item}<h1>`);
+                // `<h1>${item}<h1>`);
             });
             questionOptions.forEach(function (item, index) {
                 //console.log(item, index);
@@ -107,51 +107,43 @@ function questionID() {
             questionAnswer.forEach(function (item, index) {
                 //console.log(item, index);
             });
-            //var availableQuestions = questionArray.concat(questionOptions, questionAnswer);
-            //console.log(availableQuestions);
-            /*let availableQuestions = [questionArray, questionOptions, questionAnswer];
-            let question = availableQuestions[0][2];
-            let options = availableQuestions[1][2];
-            let answer = availableQuestions[2][2];
 
-            let newQuestion = [question, options, answer];
-            console.log(newQuestion);*/
-
-            //console.log("Array of Questions: " + questionArray);
-           // console.log("Array of Options: " + questionOptions);
-           // console.log("Array of Answers: " + questionAnswer);
-        
             //debugger;  
-            let availableQuestions = [];
-           
-            for(i=0; i < questionArray.length; i++) {
+
+            for (i = 0; i < questionArray.length; i++) {
                 let newQuestion = {
-                    question : questionArray[i],
-                    options : questionOptions[i],
-                    answer : questionAnswer[i]
+                    question: questionArray[i],
+                    options: questionOptions[i],
+                    answer: questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
             };
-            
+
             displayQuestion();
         });
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 
-function displayQuestion() { 
-            let showQuestion = availableQuestions[questionNum];
-            question.append(
-                `<h1>${showQuestion.question}</h1>`
-            );
-            console.log(showQuestion.question);
-            answerOptions.append(
-                `<button>${showQuestion.options}</button>`
-                
-            );
-            console.log(showQuestion.options);
-            console.log(showQuestion);
-            console.log(availableQuestions);
+function displayQuestion() {
+    let showQuestion = availableQuestions[questionNum];
+    questionTitle.append(showQuestion.question);
+    console.log(showQuestion.question);
+    //alert(typeof(showQuestion.question));
+
+    //debugger;
+    answerOptions.forEach(option => {
+        const optionsNum = option.dataset['number'];
+        option.innerText = showQuestion.options[i];
+        //answerOptions.append(showQuestion.options[i]);
+        console.log(showQuestion.options[i]);
+    });
+    /*for (let i = 0; i < showQuestion.options.length; i++) {
+        answerOptions.append(showQuestion.options);
+        console.log(showQuestion.options);
+    }
+*/
+ 
 };
 
 // Select the answer 
@@ -306,3 +298,13 @@ const select = $(".selectSomething");
 		})
 }
 */
+
+ //var availableQuestions = questionArray.concat(questionOptions, questionAnswer);
+            //console.log(availableQuestions);
+/*let availableQuestions = [questionArray, questionOptions, questionAnswer];
+let question = availableQuestions[0][2];
+let options = availableQuestions[1][2];
+let answer = availableQuestions[2][2];
+
+let newQuestion = [question, options, answer];
+console.log(newQuestion);*/
