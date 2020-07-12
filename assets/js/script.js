@@ -3,6 +3,8 @@ const startButton = document.getElementById('start-btn');
 const question = document.getElementById('questionTitle');
 const answerOptions = document.getElementsByClassName('qst-btn');
 
+var questionNum = 0;
+
 let currentQuestion = {};
 let questionsCounter = 0;
 let results;
@@ -70,6 +72,7 @@ function dropdownOptions() {
 //debugger;
 // Generate an URL link to fetch questions from API
 function questionID() {
+    //debugger;
     dropdownOptions();
     //randomQuestions = question.sort(() => Math.random() - .5);
     const question = $('#questionTitle');
@@ -118,21 +121,26 @@ function questionID() {
            // console.log("Array of Options: " + questionOptions);
            // console.log("Array of Answers: " + questionAnswer);
         
-            debugger;
-            
-            let i = 0;
+            //debugger;  
             let availableQuestions = [];
            
             for(i=0; i < questionArray.length; i++) {
                 let newQuestion = {
-                    "question" : questionArray[i],
-                    "options" : questionOptions[i],
-                    "answer" : questionAnswer[i]
+                    question : questionArray[i],
+                    options : questionOptions[i],
+                    answer : questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
             };
             
-            let showQuestion = availableQuestions[i];
+            displayQuestion();
+        });
+};
+questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+
+
+function displayQuestion() { 
+            let showQuestion = availableQuestions[questionNum];
             question.append(
                 `<h1>${showQuestion.question}</h1>`
             );
@@ -142,20 +150,9 @@ function questionID() {
                 
             );
             console.log(showQuestion.options);
-            newQuestion();
-
             console.log(showQuestion);
             console.log(availableQuestions);
-        })
 };
-questionID(selectedCategory, selectedDifficulty, selectedQuestions);
-
-/*
-function newQuestion() {
-    questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.lenth);
-
-}*/
 
 // Select the answer 
 function selectAnswer(e) {
