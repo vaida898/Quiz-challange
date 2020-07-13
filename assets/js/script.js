@@ -6,7 +6,6 @@ const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 var questionNum = 0;
 var availableQuestions = [];
 
-let currentQuestion = {};
 let questionsCounter = 0;
 let results;
 
@@ -128,15 +127,13 @@ questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 function displayQuestion() {
     let showQuestion = availableQuestions[questionNum];
     questionTitle.append(showQuestion.question);
-    console.log(showQuestion.question);
-    //alert(typeof(showQuestion.question));
+    //console.log(showQuestion.question);
 
     //debugger;
     answerOptions.forEach(option => {
-        const optionsNum = option.dataset['number'];
-        option.innerText = showQuestion.options[i];
-        //answerOptions.append(showQuestion.options[i]);
-        console.log(showQuestion.options[i]);
+        const optionsNum = option.dataset["number"];
+        option.innerText = showQuestion.options[optionsNum];
+        //console.log(showQuestion.options);
     });
     /*for (let i = 0; i < showQuestion.options.length; i++) {
         answerOptions.append(showQuestion.options);
@@ -144,7 +141,13 @@ function displayQuestion() {
     }
 */
  
+nextQuestion();
 };
+
+function nextQuestion() {
+    questionCounter++;
+    questionNum = Math.floor(Math.random() * availableQuestions.length);
+}
 
 // Select the answer 
 function selectAnswer(e) {
