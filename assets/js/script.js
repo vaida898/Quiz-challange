@@ -87,15 +87,32 @@ function questionID() {
 
             data.results.forEach(question => {
                 questionArray.push(question.question);
+                console.log(question);
                 question.incorrect_answers.push(question.correct_answer);
                 let allOptions = question.incorrect_answers;
                 questionOptions.push(allOptions);
                 questionAnswer.push(question.correct_answer);
-                // questionTitle.append(
+                console.log(question.question);
+                for (let q of question.incorrect_answers ) {
+                    console.log(q);
+                }
+                console.log(question.correct_answer);
+
+               
                 // `<h1>${question.question}<h1>`,
                 // );
 
             });
+
+             function checkUp(correct_answer, choisen_answer) {
+                    if (correct_answer == coisen_answer) {
+                        console.log('correct');
+                    } else {
+                        console.log('incorrect');
+                    }
+                    
+                }
+
             questionArray.forEach(function (item, index) {
                 //questionTitle.append(
                 // `<h1>${item}<h1>`);
