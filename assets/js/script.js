@@ -104,7 +104,7 @@ function questionID() {
 
             });
 
-             function checkUp(correct_answer, choisen_answer) {
+             function checkAnswer(correct_answer, choisen_answer) {
                     if (correct_answer == coisen_answer) {
                         console.log('correct');
                     } else {
@@ -328,3 +328,4 @@ let answer = availableQuestions[2][2];
 
 let newQuestion = [question, options, answer];
 console.log(newQuestion);*/
+
