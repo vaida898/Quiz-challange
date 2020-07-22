@@ -7,10 +7,12 @@ var questionNum = 0;
 var availableQuestions = [];
 var showQuestion;
 var choice;
-var choisen_answer;
 var questionCounter = 0;
 var correctAnswersLog = [];
 var incorrectAnswersLog = [];
+var choisen_answer;
+
+var acceptinAnswers = true;
 
 let results;
 
@@ -26,7 +28,6 @@ let questions = [];
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
-//answerOptions.addEventListener('click', checkAnswer)
 /*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
@@ -41,7 +42,6 @@ $("#play-btn").click(function startGame() {
 function startGame() {
     console.log('started');
     questionCounter = 0;
-    //setNextQuestion()
 }
 
 // Fetch category value from API
@@ -87,29 +87,18 @@ function questionID() {
             // display a question
             data.results.forEach(question => {
                 questionArray.push(question.question);
-                console.log(question);
+                //console.log(question);
                 // display answers
                 question.incorrect_answers.push(question.correct_answer);
                 let allOptions = question.incorrect_answers;
                 questionOptions.push(allOptions);
                 questionAnswer.push(question.correct_answer);
-                console.log(question.question);
+                //console.log(question.question);
                 for (let q of question.incorrect_answers) {
-                    console.log(q);
+                    //console.log(q);
                 }
-                console.log(question.correct_answer);
+                //console.log(question.correct_answer);
             });
-            // check if answer is correct
-            function checkAnswer(correct_answer, choisen_answer) {
-                if (correct_answer == coisen_answer) {
-                    correctAnswersLog++;
-
-                    console.log(correctAnswersLog);
-                } else {
-                    incorrectAnswersLog++;
-                    console.log(incorrectAnswersLog);
-                }
-            };
 
             for (i = 0; i < questionArray.length; i++) {
                 let newQuestion = {
@@ -118,18 +107,11 @@ function questionID() {
                     answer: questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
-
-                /*let buttons = document.querySelectorAll('.qst-btn')
-                buttons.forEach((btn) => {
-                    btn.addEventListener("click", (event) => {
-                        alert(event.target);
-                    });
-                });*/
-                //console.log(newQuestion);
             };
             displayQuestion();
         });
 };
+
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 function displayQuestion() {
@@ -137,45 +119,41 @@ function displayQuestion() {
     showQuestion = availableQuestions[questionNum];
     questionTitle.innerHTML = showQuestion.question;
     currentQuestion = showQuestion.question;
-    console.log(currentQuestion);
+    //console.log(currentQuestion);
 
     //debugger;
     answerOptions.forEach(option => {
         const optionsNum = option.dataset["number"];
+        //console.log(optionsNum);
         option.innerText = showQuestion.options[optionsNum];
         choice = showQuestion.options[optionsNum];
-        console.log(choice);
+        //console.log(choice);
+        if (choice.correct_answer) {
+            correctAnswersLog.push[i];
+            console.log(correctAnswersLog);
+        } else {
+            incorrectAnswersLog.push[i];
+            console.log(incorrectAnswersLog);
+        };
     });
-
-
-    /*for (let i = 0; i < showQuestion.options.length; i++) {
-        answerOptions.append(showQuestion.options);
-        console.log(showQuestion.options);
-    }
-*/
-
+    //checkAnswer();
     nextQuestion();
 };
+
+// check if answer is correct
+/*function checkAnswer(correct_answer, choisen_answer) {
+    if (correct_answer == coisen_answer) {
+        console.log('correct');
+    } else {
+        //incorrectAnswersLog;
+        console.log('incorrect');
+    }
+};*/
 
 function nextQuestion() {
     //questionCounter++;
     questionNum = Math.floor(Math.random() * availableQuestions.length);
 };
-
-//availableQuestions.splice(questionNum, 1);
-
-/*
-// Select the answer 
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    if (randomQuestions > currentQuestion + 1) {
-        $("#question").show();
-    } else {
-        //$("#score").show();
-        $("#question").hide();
-    };
-};*/
 
 // Animations between page's loads
 $("#start-btn").click(function () {
@@ -187,6 +165,25 @@ $("#submit-btn").click(function () {
     $("#score").show().addClass("animation");
     $("#question").hide();
 });
+
+
+/*
+// Select the answer
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    if (randomQuestions > currentQuestion + 1) {
+        $("#question").show();
+    } else {
+        $("#score").show();
+        $("#question").hide();
+    };*/
+
+/*for (let i = 0; i < showQuestion.options.length; i++) {
+    answerOptions.append(showQuestion.options);
+    console.log(showQuestion.options);
+}
+*/
 
 /*
 // Getting questions displayed from API
