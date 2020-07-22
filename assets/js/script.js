@@ -5,9 +5,13 @@ const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 
 var questionNum = 0;
 var availableQuestions = [];
-var currentQuestion;
+var showQuestion;
+var choice;
+var choisen_answer;
+var questionCounter = 0;
+var correctAnswersLog = [];
+var incorrectAnswersLog = [];
 
-//et questionsCounter = 0;
 let results;
 
 let questionArray = [];
@@ -98,13 +102,15 @@ function questionID() {
             // check if answer is correct
             function checkAnswer(correct_answer, choisen_answer) {
                 if (correct_answer == coisen_answer) {
-                    console.log('correct');
-                } else {
-                    console.log('incorrect');
-                }
-            }
+                    correctAnswersLog++;
 
-            
+                    console.log(correctAnswersLog);
+                } else {
+                    incorrectAnswersLog++;
+                    console.log(incorrectAnswersLog);
+                }
+            };
+
             for (i = 0; i < questionArray.length; i++) {
                 let newQuestion = {
                     question: questionArray[i],
@@ -126,18 +132,22 @@ function questionID() {
 };
 questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
-
 function displayQuestion() {
-    let showQuestion = availableQuestions[questionNum];
-    currentQuestion = questionTitle.append(showQuestion.question);
-    console.log(showQuestion.question);
+    questionCounter++;
+    showQuestion = availableQuestions[questionNum];
+    questionTitle.innerHTML = showQuestion.question;
+    currentQuestion = showQuestion.question;
+    console.log(currentQuestion);
 
     //debugger;
     answerOptions.forEach(option => {
         const optionsNum = option.dataset["number"];
         option.innerText = showQuestion.options[optionsNum];
-        //console.log(showQuestion.options);
+        choice = showQuestion.options[optionsNum];
+        console.log(choice);
     });
+
+
     /*for (let i = 0; i < showQuestion.options.length; i++) {
         answerOptions.append(showQuestion.options);
         console.log(showQuestion.options);
@@ -150,7 +160,9 @@ function displayQuestion() {
 function nextQuestion() {
     //questionCounter++;
     questionNum = Math.floor(Math.random() * availableQuestions.length);
-}
+};
+
+//availableQuestions.splice(questionNum, 1);
 
 /*
 // Select the answer 
