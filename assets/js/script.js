@@ -1,7 +1,7 @@
 const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
 const questionTitle = document.getElementById('questionTitle');
-const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
+const answerOptions = Array.from(document.getElementById('qst-btn'));
 
 var questionNum = 0;
 var availableQuestions = [];
@@ -26,8 +26,9 @@ var selectedQuestions;
 
 let questions = [];
 
-playButton.addEventListener('click', startGame)
-startButton.addEventListener('click', dropdownOptions)
+playButton.addEventListener('click', startGame);
+startButton.addEventListener('click', dropdownOptions);
+answerOptions.addEventListener('click', displayQuestion);
 /*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
@@ -107,6 +108,7 @@ function questionID() {
                     answer: questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
+                console.log(newQuestion);
             };
             displayQuestion();
         });
@@ -127,8 +129,8 @@ function displayQuestion() {
         //console.log(optionsNum);
         option.innerText = showQuestion.options[optionsNum];
         choice = showQuestion.options[optionsNum];
-        //console.log(choice);
-        if (choice.correct_answer) {
+        console.log(choice);
+        if (newQuestion.answer == correct_answer) {
             correctAnswersLog.push[i];
             console.log(correctAnswersLog);
         } else {
