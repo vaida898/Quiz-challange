@@ -5,8 +5,9 @@ const answerOptions = Array.from(document.getElementsByClassName('qst-btn'));
 
 var questionNum = 0;
 var availableQuestions = [];
+var currentQuestion;
 
-let questionsCounter = 0;
+//et questionsCounter = 0;
 let results;
 
 let questionArray = [];
@@ -21,6 +22,7 @@ let questions = [];
 
 playButton.addEventListener('click', startGame)
 startButton.addEventListener('click', dropdownOptions)
+//answerOptions.addEventListener('click', checkAnswer)
 /*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
@@ -31,12 +33,6 @@ $("#play-btn").click(function startGame() {
     $("#selection").show().addClass("animation");
     $("#main").hide();
 });
-
-// Building quiz game
-/*function quizGame() {
-    const outputHTML = [];
-
-}*/
 
 function startGame() {
     console.log('started');
@@ -74,7 +70,6 @@ function dropdownOptions() {
 function questionID() {
     //debugger;
     dropdownOptions();
-    //randomQuestions = question.sort(() => Math.random() - .5);
     const question = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
@@ -85,47 +80,31 @@ function questionID() {
 
             results = data;
 
+            // display a question
             data.results.forEach(question => {
                 questionArray.push(question.question);
                 console.log(question);
+                // display answers
                 question.incorrect_answers.push(question.correct_answer);
                 let allOptions = question.incorrect_answers;
                 questionOptions.push(allOptions);
                 questionAnswer.push(question.correct_answer);
                 console.log(question.question);
-                for (let q of question.incorrect_answers ) {
+                for (let q of question.incorrect_answers) {
                     console.log(q);
                 }
                 console.log(question.correct_answer);
-
-               
-                // `<h1>${question.question}<h1>`,
-                // );
-
             });
-
-             function checkAnswer(correct_answer, choisen_answer) {
-                    if (correct_answer == coisen_answer) {
-                        console.log('correct');
-                    } else {
-                        console.log('incorrect');
-                    }
-                    
+            // check if answer is correct
+            function checkAnswer(correct_answer, choisen_answer) {
+                if (correct_answer == coisen_answer) {
+                    console.log('correct');
+                } else {
+                    console.log('incorrect');
                 }
+            }
 
-            questionArray.forEach(function (item, index) {
-                //questionTitle.append(
-                // `<h1>${item}<h1>`);
-            });
-            questionOptions.forEach(function (item, index) {
-                //console.log(item, index);
-            });
-            questionAnswer.forEach(function (item, index) {
-                //console.log(item, index);
-            });
-
-            //debugger;  
-
+            
             for (i = 0; i < questionArray.length; i++) {
                 let newQuestion = {
                     question: questionArray[i],
@@ -133,8 +112,15 @@ function questionID() {
                     answer: questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
-            };
 
+                /*let buttons = document.querySelectorAll('.qst-btn')
+                buttons.forEach((btn) => {
+                    btn.addEventListener("click", (event) => {
+                        alert(event.target);
+                    });
+                });*/
+                //console.log(newQuestion);
+            };
             displayQuestion();
         });
 };
@@ -143,8 +129,8 @@ questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 function displayQuestion() {
     let showQuestion = availableQuestions[questionNum];
-    questionTitle.append(showQuestion.question);
-    //console.log(showQuestion.question);
+    currentQuestion = questionTitle.append(showQuestion.question);
+    console.log(showQuestion.question);
 
     //debugger;
     answerOptions.forEach(option => {
@@ -157,15 +143,16 @@ function displayQuestion() {
         console.log(showQuestion.options);
     }
 */
- 
-nextQuestion();
+
+    nextQuestion();
 };
 
 function nextQuestion() {
-    questionCounter++;
+    //questionCounter++;
     questionNum = Math.floor(Math.random() * availableQuestions.length);
 }
 
+/*
 // Select the answer 
 function selectAnswer(e) {
     const selectedButton = e.target
@@ -173,10 +160,10 @@ function selectAnswer(e) {
     if (randomQuestions > currentQuestion + 1) {
         $("#question").show();
     } else {
-        $("#score").show();
+        //$("#score").show();
         $("#question").hide();
     };
-};
+};*/
 
 // Animations between page's loads
 $("#start-btn").click(function () {
