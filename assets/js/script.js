@@ -1,15 +1,15 @@
 const playButton = document.getElementById('play-btn');
 const startButton = document.getElementById('start-btn');
 const questionTitle = document.getElementById('questionTitle');
-const answerOptions = Array.from(document.getElementById('qst-btn'));
+var answerOptions = Array.from(document.querySelectorAll('.qst-btn'));
 
 var questionNum = 0;
 var availableQuestions = [];
 var showQuestion;
 var choice;
 var questionCounter = 0;
-var correctAnswersLog = [];
-var incorrectAnswersLog = [];
+var correctAnswersLog;
+var incorrectAnswersLog;
 var choisen_answer;
 
 var acceptinAnswers = true;
@@ -28,7 +28,7 @@ let questions = [];
 
 playButton.addEventListener('click', startGame);
 startButton.addEventListener('click', dropdownOptions);
-answerOptions.addEventListener('click', displayQuestion);
+//answerOptions.addEventListener('click', displayQuestion);
 /*submitButton.addEventListener('click', () => {
     currentQuestions++
     nextQuestion()
@@ -75,7 +75,7 @@ function dropdownOptions() {
 function questionID() {
     //debugger;
     dropdownOptions();
-    const question = $('#questionTitle');
+    let question = $('#questionTitle');
     fetch(`https://opentdb.com/api.php?amount=${selectedQuestions}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
         //.then(res => console.log(res))
         .then((res) => res.json())
@@ -108,49 +108,93 @@ function questionID() {
                     answer: questionAnswer[i]
                 };
                 availableQuestions.push(newQuestion);
-                console.log(newQuestion);
+                //console.log(newQuestion);
             };
             displayQuestion();
         });
 };
 
-questionID(selectedCategory, selectedDifficulty, selectedQuestions);
+//questionID(selectedCategory, selectedDifficulty, selectedQuestions);
 
 function displayQuestion() {
     questionCounter++;
-    showQuestion = availableQuestions[questionNum];
+    var showQuestion = availableQuestions[questionNum];
+    console.log(showQuestion);
     questionTitle.innerHTML = showQuestion.question;
-    currentQuestion = showQuestion.question;
+    currentQuestion = showQuestion.questionquestion;
+    let answerOptions = showQuestion.options;
+    console.log(answerOptions);
+    let correctAnswers = showQuestion.answer;
+    console.log(correctAnswers);
     //console.log(currentQuestion);
 
-    //debugger;
-    answerOptions.forEach(option => {
-        const optionsNum = option.dataset["number"];
-        //console.log(optionsNum);
-        option.innerText = showQuestion.options[optionsNum];
-        choice = showQuestion.options[optionsNum];
-        console.log(choice);
-        if (newQuestion.answer == correct_answer) {
-            correctAnswersLog.push[i];
-            console.log(correctAnswersLog);
-        } else {
-            incorrectAnswersLog.push[i];
-            console.log(incorrectAnswersLog);
-        };
+    buttons = document.querySelectorAll('qst-btn');
+
+    buttons.forEach(function(option) {
+        console.log(option);
+        option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
+        choices = document.createElement('div');
+        choices.appendChild(buttons);
+        choices.innerText = 'option';
+        
+        console.log(choices);
     });
+        //let optionsNum = option.dataset["number"];*/
+    //console.log(optionsNum);
+    //option.innerText = showQuestion.option[optionsNum];
+    //option = `<button onclick=checkAnswer(${correct_answer},${answer})>${answer}</button>`
+    //choice = showQuestion.option[optionsNum];
+    //let correctAnswer = showQuestion.options.correct_answer;
+
+    //console.log(correctAnswer);
+
+    //console.log(choice);
+    /*if (choisen_answer == correct_answer) {
+        correctAnswersLog++;
+        console.log(correctAnswersLog);
+    } else {
+        incorrectAnswersLog++;
+        console.log(incorrectAnswersLog);
+    };*/
+    //});
+
+
     //checkAnswer();
     nextQuestion();
 };
+/*
+uploadOptions();
+
+var buttons = querySelectorAll('.qst-btn');
+buttons.forEach(uploadOptions);
+
+function uploadOptions(option) {
+    option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
+    choice = document.createElement('div');
+    buttons.appendChild('choice');
+    choice.innerText = 'option';
+    console.log(choice);
+};*/
+
+
+/*
+    for (let i = 0; i < answerOptions.length; i++) {
+    answerOptions[i].addEventListener("click", function() {
+    let choisenOption = answerOptions[i].["number"];
+       //console.log(choisenOption);
+    });
+ }*/
+
 
 // check if answer is correct
-/*function checkAnswer(correct_answer, choisen_answer) {
+function checkAnswer(correct_answer, choisen_answer) {
     if (correct_answer == coisen_answer) {
         console.log('correct');
     } else {
         //incorrectAnswersLog;
         console.log('incorrect');
     }
-};*/
+};
 
 function nextQuestion() {
     //questionCounter++;
