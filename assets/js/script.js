@@ -123,22 +123,38 @@ function displayQuestion() {
     questionTitle.innerHTML = showQuestion.question;
     currentQuestion = showQuestion.questionquestion;
     let answerOptions = showQuestion.options;
-    console.log(answerOptions);
+    console.log("----- answerOptions = " + answerOptions);
     let correctAnswers = showQuestion.answer;
     console.log(correctAnswers);
     //console.log(currentQuestion);
 
     buttons = document.querySelectorAll('qst-btn');
 
-    buttons.forEach(function(option) {
-        console.log(option);
-        option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
-        choices = document.createElement('div');
-        choices.appendChild(buttons);
-        choices.innerText = 'option';
+    // ------------------------------------------------------------------------------
+    //-------------------- TIM TESTING from line 148 below --------------------------
+    // ------------------------------------------------------------------------------
+    // buttons.forEach(button); 
+    // uploadOptions();
+
+    //     function uploadOptions(option) {
+    //     option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
+    //     console.log(option);
+    //     choices = document.createElement('div');
+    //     button.appendChild(choices);
+    //     button.innerText = 'option';
         
-        console.log(choices);
+    //    console.log(button);
+    // };
+    buttons.forEach((button) => {
+        option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
+        console.log("----- option = " + option);
+        choices = document.createElement('div');
+        button.appendChild(choices);
+        button.innerText = option;
+        console.log("----- button = " + button);
     });
+
+
         //let optionsNum = option.dataset["number"];*/
     //console.log(optionsNum);
     //option.innerText = showQuestion.option[optionsNum];
