@@ -125,26 +125,10 @@ function displayQuestion() {
     let answerOptions = showQuestion.options;
     console.log("----- answerOptions = " + answerOptions);
     let correctAnswers = showQuestion.answer;
-    console.log(correctAnswers);
+    console.log("----- correctAnswers = " + correctAnswers);
     //console.log(currentQuestion);
 
-    buttons = document.querySelectorAll('qst-btn');
-
-    // ------------------------------------------------------------------------------
-    //-------------------- TIM TESTING from line 148 below --------------------------
-    // ------------------------------------------------------------------------------
-    // buttons.forEach(button); 
-    // uploadOptions();
-
-    //     function uploadOptions(option) {
-    //     option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
-    //     console.log(option);
-    //     choices = document.createElement('div');
-    //     button.appendChild(choices);
-    //     button.innerText = 'option';
-        
-    //    console.log(button);
-    // };
+    buttons = document.querySelectorAll('.qst-btn');
     buttons.forEach((button) => {
         option = `<button onclick=checkAnswer(${answerOptions},${correctAnswers})>${correctAnswers}</button>`;
         console.log("----- option = " + option);
